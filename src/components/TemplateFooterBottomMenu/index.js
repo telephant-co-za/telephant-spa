@@ -11,9 +11,9 @@ export default function TemplateFooterBottomMenu() {
           <Container maxWidth="md">
             <Toolbar>
                 <Typography variant="body1" color="inherit">
-                    &copy; 2021 Telephant Holdings (Pty) Ltd&#32;&#124;&#32;&#32;
-                    <Link href="#" color="inherit">Usage Terms</Link>&#32;&#124;&#32;&#32;
-                    <Link href="#" color="inherit">Privacy Policy</Link>&#32;&#124;&#32;&#32;
+                    &copy; 2021 Telephant Holdings (Pty) Ltd
+                    <Link href="#" color="inherit">Usage Terms</Link>
+                    <Link href="#" color="inherit">Privacy Policy</Link>
                     <Link href="#" color="inherit">Terms &amp; Conditions</Link>
                 </Typography>
             </Toolbar>

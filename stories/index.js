@@ -6,6 +6,7 @@ import MaterialUIPickers from "../src/components/DatePicker";
 import TransactionsTypeDropdown from "../src/components/TransactionsTypeDropdown";
 import TemplateFooterSocialMenu from "../src/components/TemplateFooterSocialMenu";
 import TemplateFooterBottomMenu from "../src/components/TemplateFooterBottomMenu";
+import TransactionsDataGrid from "../src/components/TransactionsDataGrid";
 
 
 storiesOf("Transactions/TransactionsExportCard", module)
@@ -20,10 +21,11 @@ storiesOf("Transactions/DatePicker", module)
 storiesOf("Transactions/TranstactionTypeDropdown", module)
     .add("default", () => <TransactionsTypeDropdown /> )
 
+storiesOf("Transactions/TransactionsDataGrid", module)
+    .add("default", () => <TransactionsDataGrid /> ) 
+
 storiesOf("Template/Footer/SocialMenu", module)
     .add("default", () => <TemplateFooterSocialMenu /> )
 
 storiesOf("Template/Footer/BottomMenu", module)
     .add("default", () => <TemplateFooterBottomMenu /> )
-
-    
