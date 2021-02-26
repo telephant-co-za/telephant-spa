@@ -7,6 +7,7 @@ import TransactionsTypeDropdown from "../src/components/TransactionsTypeDropdown
 import TemplateFooterSocialMenu from "../src/components/TemplateFooterSocialMenu";
 import TemplateFooterBottomMenu from "../src/components/TemplateFooterBottomMenu";
 import TransactionsDataGrid from "../src/components/TransactionsDataGrid";
+import TemplateHeaderNavbar from "../src/components/TemplateHeaderNavbar";
 
 
 storiesOf("Transactions/TransactionsExportCard", module)
@@ -29,3 +30,6 @@ storiesOf("Template/Footer/SocialMenu", module)
 
 storiesOf("Template/Footer/BottomMenu", module)
     .add("default", () => <TemplateFooterBottomMenu /> )
+
+storiesOf("Template/Header/Navbar", module)
+    .add("default", () => <TemplateHeaderNavbar /> )
