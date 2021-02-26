@@ -10,11 +10,11 @@ export default function TransactionsTypeDropdown(props) {
 
 return (
         <FormControl>
-          <InputLabel>Age</InputLabel>
+          <InputLabel>Transaction Type</InputLabel>
             <Select>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Deposit</MenuItem>
+              <MenuItem value={20}>Conversion</MenuItem>
+              <MenuItem value={30}>Transfer</MenuItem>
           </Select>
         </FormControl>
         )
