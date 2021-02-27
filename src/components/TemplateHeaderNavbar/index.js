@@ -1,7 +1,17 @@
 import React from "react";
+import { makeStyles } from "@material-ui/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar"
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Toolbar from "@material-ui/core/Toolbar";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Typography from "@material-ui/core/Typography"
+
+import Logo from "../Logo"
+
+const useStyles = makeStyles(theme => ({
+    toolbarMargin: {
+        ...theme.mixins.toolbar
+    }
+}))
 
 // Elevate App Bar effect from https://material-ui.com/components/app-bar/
 function ElevationScroll(props) {
@@ -19,11 +29,18 @@ function ElevationScroll(props) {
 
 
 export default function TemplateHeaderNavbar() {
+    const classes = useStyles();
     return (
-        <ElevationScroll>
-            <AppBar position="fixed">
-                <Toolbar>TelephantCloud</Toolbar>
-            </AppBar>
-        </ElevationScroll>
+        <React.Fragment>
+            <ElevationScroll>
+                <AppBar position="fixed">
+                    <Toolbar disableGutters>
+<Logo/>
+                        <Typography>TelephantCloud</Typography>
+                    </Toolbar>
+                </AppBar>
+            </ElevationScroll>
+            <div className = {classes.toolbarMargin} />
+        </React.Fragment>
   );
 }
