@@ -8,12 +8,13 @@ import Typography from "@material-ui/core/Typography";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button"
 
 import Logo from "../Logo"
 
 const useStyles = makeStyles({
     toolbarContainer: {
-        width: "100%"
+        width: "100%",
     }
 })
 
@@ -57,9 +58,11 @@ export default function TemplateHeaderNavbar() {
                 <BrowserRouter>
                     <AppBar position="fixed">
                         <Toolbar  className={classes.toolbarContainer} disableGutters>
-                            <Logo/>
-                            <Typography>TelephantCloud</Typography>
-                            <Tabs value={value} onChange={handleChange}>
+                            <Button component={Link} to="/" onClick={() => setValue(0)} disableRipple>
+                                <Logo/>                               
+                                <Typography>TelephantCloud</Typography>
+                            </Button>
+                            <Tabs value={value} onChange={handleChange} centered>
                                 <Tab label="Home" component={Link} to="/" />
                                 <Tab label="Transactions" component={Link} to="/transactions" />
                                 <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
