@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {BrowserRouter, Route, Switch} from "react-router-dom"
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -9,6 +9,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button"
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import IconButton from "@material-ui/core/IconButton";
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 import Logo from "../Logo"
 
@@ -67,6 +72,17 @@ export default function TemplateHeaderNavbar() {
                                 <Tab label="Transactions" component={Link} to="/transactions" />
                                 <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
                             </Tabs>
+                                <ButtonGroup>
+                                    <IconButton aria-label="Help">
+                                        <HelpOutlineIcon />
+                                    </IconButton>
+                                    <IconButton aria-label="Notifications">
+                                        <NotificationsNoneIcon />
+                                    </IconButton>
+                                    <IconButton aria-label="User Actions">
+                                        <PersonOutlineIcon />
+                                    </IconButton>
+                                </ButtonGroup>
                         </Toolbar>
                     </AppBar>
                     <Switch>
