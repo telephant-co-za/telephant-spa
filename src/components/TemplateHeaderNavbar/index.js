@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -39,20 +40,38 @@ export default function TemplateHeaderNavbar() {
         setValue(value)
     }
 
+    // Fixes the routing on refreshing
+    useEffect(()=>{
+        if (window.location.pathname === '/' && value != 0) {
+            setValue(0)
+        } else if (window.location.pathname === '/transactions' && value != 1) {
+            setValue(1)
+        } else if (window.location.pathname === '/beneficiaries' && value != 2) {
+            setValue(2)
+        }
+    }, [value]);
+
     return (
         <React.Fragment>
             <ElevationScroll>
-                <AppBar position="fixed">
-                    <Toolbar  className={classes.toolbarContainer} disableGutters>
-                        <Logo/>
-                        <Typography>TelephantCloud</Typography>
-                        <Tabs value={value} onChange={handleChange}>
-                            <Tab label="Home" component={Link} to="/" />
-                            <Tab label="Transactions" component={Link} to="/transactions" />
-                            <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
-                        </Tabs>
-                    </Toolbar>
-                </AppBar>
+                <BrowserRouter>
+                    <AppBar position="fixed">
+                        <Toolbar  className={classes.toolbarContainer} disableGutters>
+                            <Logo/>
+                            <Typography>TelephantCloud</Typography>
+                            <Tabs value={value} onChange={handleChange}>
+                                <Tab label="Home" component={Link} to="/" />
+                                <Tab label="Transactions" component={Link} to="/transactions" />
+                                <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
+                            </Tabs>
+                        </Toolbar>
+                    </AppBar>
+                    <Switch>
+                        <Route exact path="/" component={() => <div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Home</div>} />
+                        <Route exact path="/transactions" component={() => <div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Transactions</div>} />
+                        <Route exact path="/beneficiaries" component={() => <div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Beneficiaries</div>} />
+                    </Switch>
+                </BrowserRouter>
             </ElevationScroll>
         </React.Fragment>
   );
