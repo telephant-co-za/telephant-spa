@@ -4,8 +4,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Typography from "@material-ui/core/Typography";
-import Tabs from "@material-ui/core/Tabs"
-import Tab from "@material-ui/core/Tab"
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import { Link } from "react-router-dom";
 
 import Logo from "../Logo"
 
@@ -46,9 +47,9 @@ export default function TemplateHeaderNavbar() {
                         <Logo/>
                         <Typography>TelephantCloud</Typography>
                         <Tabs value={value} onChange={handleChange}>
-                            <Tab label="Home"/>
-                            <Tab label="Transactions"/>
-                            <Tab label="Beneficiaries"/>
+                            <Tab label="Home" component={Link} to="/" />
+                            <Tab label="Transactions" component={Link} to="/transactions" />
+                            <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
                         </Tabs>
                     </Toolbar>
                 </AppBar>
