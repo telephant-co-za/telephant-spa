@@ -14,12 +14,23 @@ import IconButton from "@material-ui/core/IconButton";
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import Paper from '@material-ui/core/Paper';
 
 import Logo from "../Logo"
+import { styles } from "@material-ui/pickers/views/Calendar/Calendar";
 
 const useStyles = makeStyles({
-    toolbarContainer: {
-        width: "100%",
+
+    offset: {
+       offset: 2
+    },
+
+    iconButtons: {
+        marginLeft: 'auto'
+    },
+
+    logo: {
+        marginRight: 'auto'
     }
 })
 
@@ -48,11 +59,11 @@ export default function TemplateHeaderNavbar() {
 
     // Fixes the routing on refreshing
     useEffect(()=>{
-        if (window.location.pathname === '/' && value != 0) {
+        if (window.location.pathname === '/' && value !== 0) {
             setValue(0)
-        } else if (window.location.pathname === '/transactions' && value != 1) {
+        } else if (window.location.pathname === '/transactions' && value !== 1) {
             setValue(1)
-        } else if (window.location.pathname === '/beneficiaries' && value != 2) {
+        } else if (window.location.pathname === '/beneficiaries' && value !== 2) {
             setValue(2)
         }
     }, [value]);
@@ -61,9 +72,8 @@ export default function TemplateHeaderNavbar() {
         <React.Fragment>
             <ElevationScroll>
                 <BrowserRouter>
-                    <AppBar position="fixed">
-                        <Toolbar  className={classes.toolbarContainer} disableGutters>
-                            <Button component={Link} to="/" onClick={() => setValue(0)} disableRipple>
+                    <Toolbar position="fixed" disableGutters color="primary">
+                            <Button component={Link} to="/" onClick={() => setValue(0)} disableRipple class={styles.logo}>
                                 <Logo/>                               
                                 <Typography>TelephantCloud</Typography>
                             </Button>
@@ -72,7 +82,7 @@ export default function TemplateHeaderNavbar() {
                                 <Tab label="Transactions" component={Link} to="/transactions" />
                                 <Tab label="Beneficiaries" component={Link} to="/beneficiaries" />
                             </Tabs>
-                                <ButtonGroup>
+                                <ButtonGroup className={classes.iconButtons}>
                                     <IconButton aria-label="Help">
                                         <HelpOutlineIcon />
                                     </IconButton>
@@ -83,8 +93,8 @@ export default function TemplateHeaderNavbar() {
                                         <PersonOutlineIcon />
                                     </IconButton>
                                 </ButtonGroup>
-                        </Toolbar>
-                    </AppBar>
+                    </Toolbar>
+                    <div className={classes.offset} />
                     <Switch>
                         <Route exact path="/" component={() => <div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Home</div>} />
                         <Route exact path="/transactions" component={() => <div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Transactions</div>} />

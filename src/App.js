@@ -1,18 +1,37 @@
 import React from "react";
 import { ThemeProvider } from '@material-ui/styles'
-import theme from './Theme'
 import TemplateHeaderNavbar from "./components/TemplateHeaderNavbar"
-import {BrowserRouter, Route, Switch} from "react-router-dom"
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const themeLight = createMuiTheme({
+  palette: {
+    background: {
+      default: "#e4f0e2"
+    }
+
+    },
+});
+
+const themeDark = createMuiTheme({
+    palette: {
+      background: {
+        default: "#222222",
+      }
+
+    },
+});
+
+
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={ themeDark }>
 
         <TemplateHeaderNavbar />
 
 
-    </ThemeProvider>
-  );
+        </MuiThemeProvider>);
+
 }
 
 export default App;
