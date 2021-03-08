@@ -11,7 +11,7 @@ export default function Header (props){
     <AppBar position="fixed" elevation={4} style={{ background: '#FFFFFF' }}>
       <Toolbar>
         <Logo color='#ed6524' width="30pt" height="30pt" />
-        <Typography  variant="h6" component="h1">TelephantCloud</Typography>
+        <Typography  variant="h6" component="h1" color="textPrimary">TelephantCloud</Typography>
         <HeaderTabs />
         <UserButtonGroup />
       </Toolbar>
