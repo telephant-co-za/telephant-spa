@@ -8,7 +8,7 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 
-<Meta title="Example/Introduction" />
+<Meta title="Telephant Cloud Project Overview" />
 
 <style>{`
   .subheading {
@@ -22,99 +22,55 @@ import StackAlt from './assets/stackalt.svg';
     margin-bottom: 12px;
     margin-top: 40px;
   }
-
-  .link-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 10px;
-  }
-
-  @media (min-width: 620px) {
-    .link-list {
-      row-gap: 20px;
-      column-gap: 20px;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media all and (-ms-high-contrast:none) {
-  .link-list {
-      display: -ms-grid;
-      -ms-grid-columns: 1fr 1fr;
-      -ms-grid-rows: 1fr 1fr;
-    }
-  }
-
-  .link-item {
-    display: block;
-    padding: 20px 30px 20px 15px;
-    border: 1px solid #00000010;
-    border-radius: 5px;
-    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
-    color: #333333;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .link-item:hover {
-    border-color: #1EA7FD50;
-    transform: translate3d(0, -3px, 0);
-    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
-  }
-
-  .link-item:active {
-    border-color: #1EA7FD;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .link-item strong {
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-  }
-  
-  .link-item img {
-    height: 40px;
-    width: 40px;
-    margin-right: 15px;
-    flex: none;
-  }
-
-  .link-item span {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .tip {
-    display: inline-block;
-    border-radius: 1em;
-    font-size: 11px;
-    line-height: 12px;
-    font-weight: 700;
-    background: #E7FDD8;
-    color: #66BF3C;
-    padding: 4px 12px;
-    margin-right: 10px;
-    vertical-align: top;
-  }
-
-  .tip-wrapper {
-    font-size: 13px;
-    line-height: 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .tip-wrapper code {
-    font-size: 12px;
-    display: inline-block;
-  }
-
-  
 `}</style>
 
-# Welcome to Storybook
+# Telephant Cloud Project Overview
+
+Here is a brief introduction to the concept of Telephant Cloud, an online business that I want to
+develop as part of my Msc Computing, Enterprise Web Development module.
+
+In South Africa a large portion of the population is on a pre-paid model of getting airtime and data.  (vs contracts which requires far more credit checks and formality and a monthly salary).  This pre-paid-model is referred to as pay as you go.  In recent years the consumption of data for the use of apps has increased dramatically.  So for example Whats App is a great service as it provides a far cheaper means for people to communicate then phone calls over the mobile networks.  Also the likes of Uber, Uber Eats, Taxify, Mr Delivery, Take-a-Lot amongst others have created a massive opportunity for people to be employed as drivers.  At lunch and dinner times large groups of Uber Eats delivery men (on motor bikes) hang around the restaurants waiting to pick up and deliver orders. I believe there may be as many as 30000 of these types of drivers in Johannesburg alone.  Data is required to get access to these apps and I have informally interviewed some of these drivers and they are spending thousands of rand on data a month.  A lot of people do not have access to wifi hotspots in their homes and unlike America and Europe wifi is not quite as omnipresent or ubiquitous in cafe’s and commercial areas for free.  In order to get airtime a person will have to make a trip to the shops (large retail shops like Checkers, Pick n Pay or a petrol station Engen, BP etc).  They will buy airtime in tiny denominations like R5.00 (0.28 Euro)
+
+Solution
+I came across an API offered by https://africastalking.com/airtime that allows developers to build apps where we can “send” airtime to phones.  It can provide this service in many countries in Africa including South Africa across our three major networks.  So I want to create a web app (web app and mobile) that can do the following:
+
+Initial Phase
+Vendors of airtime can use the SPA, mobile app or a USSD interface to send airtime to customers.  So in exchange for cash the vendor will send the airtime - this will provide a convenience for the Uber Delivery man as he doesn’t have to go to the retail store to purchase airtime before his “shift”.  It creates an opportunity for the likes of car guards who are in these car parks to informally watch cars.
+The app and USSD interface can also be used by informal traders and spaza shops to sell airtime to consumers (these are localised retailers) - remember the consumers are having to travel by taxi (or walk) into commercial areas to buy small quantities of data (5 ZAR / 0,28 Euro) where a trip on a taxi can cost 20 ZAR (1.12 EUR)!  The images below are to just give an indication of the commercial reality I am talking about (informal trader, spaza, tax, vs Checkers).
+
+Second Phase
+SME: For larger business employers a similar problem exists.  As a phase 2 (probably after the module) I want to make an API available so that employers can integrate their payroll, tax and ERP systems into my service.  This will allow business to automatically send the non-contract cell phone employees airtime on a monthly basis.  My argument is that a lot of communication for businesses includes group chats and important company messages are sent on whats app but the business is not providing wifi or cell phone contracts to the labour levels (the higher white-colla levels will get phone contracts). So it is essentially “discrimatey” labour practice not to provide all staff with airtime.  [That's a whole other argument.]
+
+Final Phase
+Here’s the end game on this and where the plans aren’t as well formulated yet but just to give you and idea where I could take this:
+
+South Africa has a large proportion of “unbankable” people.  The reason is complex.  For example people are illegal immigrants and don’t have papers or don’t have formal addresses. But the main reason is the cost of opening and operating a bank account is too prohibitive.  
+
+So for example, to deposit cash into a bank costs 20 ZAR.  And to draw cash at an ATM could cost R5 to R8. For me that’s no problem because I’ll put 60000 ZAR in a month as a mid-level white collar worker. For the unbankable that is earning 100 ZAR a day (maybe) this is 20%-30% of their daily wage. This is just an illustrative example.  It actually costs more than they make to have an account.  But it is one of the primary reasons for the unbankable dilemma. The costs can drop lower but are still too high.
+
+What I want to do is make it possible for people to exchange “credit” on my app. This is a far more complex issue and also involves regulators, financial controls etc.  I would take it to a point and then sell the “app” off to the likes of Capitec bank who has the infrastructure and banking licenses to handle the next phase of the idea.  Remember the data that comes from such an app is also unprecedented gold mine as right now the informal markets are a black hole to banks.
+
+Services similar to this do exist in South Africa and Africa.  But they are missing an important ingredient. Utility is going to be the liquidity of the system.  People always need airtime and data and that makes it legitimate currency.
+
+Commercial Challenges
+I am a B Com student with entrepreneurial experience and I am aware that I do not know exactly how this will pan out in terms of a commercial venture and it may actually prove unworkable:
+
+For example operating a USSD gateway can be expensive and if volume is not high it will lose money. (This needs investigation; Twilio has offerings and Africa’s Talking offers a USSD service but it is expensive).  If I had a microservices framework in place behind the app, the same microservices could be used with a USSD and API interface no problem anyway when the app goes commercial (same with the API).  Using AWS serverless microservices reduces overhead costs.
+Taking cash deposits is billed to the account receiving the cash.  (This is also why it is better to have users exchanging credits with each other and informal traders being cash points for the system not the banks).  With a partnership with a bank like Capitec this could change but cash handling in South Africa is expensive so the banks would find a credit exchange system very appealing.  
+Just by way of example and this is true and I have experienced it, if an informal vendor sells you something (say a banana) for 80c and you need change for 20c you may get your change as sweets (Chappies chewing gums).  You see Chappies chewing gum have essentially become a currency for informal traders.  Likewise the telphant app will make airtime credits into a currency for these informal trades.  Informal traders also become the cash node for the system.
+It is better for the vendor to deal in airtime credit than money 
+The discount received on the airtime is only 0.5% so this is the margin which may not be high enough to cover expenses but remember the airtime vendor needs to be rewarded with a commission.
+
+Anyway for my assignment (and as a personal business project) I am without a full commercial exploration i.e business plan - going to embark on this Telephant project.  I would like to use the skills of the module as well as pre-existing skills that I have in terms of AWS cloud technologies and tech skill to build a completely scalable web app that can do what is described in the initial phase of this document.
+
+In December I started with some AWS Lambda functions, Step functions, a small Dynomo DB and I even put the start of a website up on S3.  Content and illustrations need work of course.
+http://www.telephantcloud.co.za.s3-website-eu-west-1.amazonaws.com/
+
+Anyway…
+That's my plan.  I would like to use this as my idea for a web app.  I am not going to get bogged down by the commercials. I am going to focus on just getting it to work.  And maybe I will launch it as a proper service with an aim to ultimately developing it into the currency exchange mechanism that I can sell to a bank like Capitec that is trying to capture the unbanked market.  But I must build the brand and whole network first before I take it to them for them to buy else they will just copy me.
+
+
+
 
 Storybook helps you build UI components in isolation from your app's business logic, data, and context.
 That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
@@ -122,90 +78,3 @@ That makes it easy to develop hard-to-reach states. Save these UI states as **st
 Browse example stories now by navigating to them in the sidebar.
 View their code in the `src/stories` directory to learn how they work.
 We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
-
-<div className="subheading">Configure</div>
-
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
-
-<div className="subheading">Learn</div>
-
-<div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </a>
-  <a className="link-item" href="https://www.learnstorybook.com" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
-      <strong>GitHub project</strong>
-      View the source and add issues
-    </span>
-  </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
-    </span>
-  </a>
-</div>
-
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
-  <code>src/stories/Introduction.stories.mdx</code>
-</div>

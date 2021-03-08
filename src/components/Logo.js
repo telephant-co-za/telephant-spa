@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Logo() {
+export default function Logo({ color }) {
     return(
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="60.000000pt" height="60.000000pt" viewBox="0 0 60.000000 60.000000"
                 preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,60.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
+                    fill={color} stroke="none">
                         <path d="M240 551 c-14 -5 -40 -15 -57 -24 -18 -10 -50 -17 -71 -17 -66 0 -72
                         -14 -72 -183 0 -184 2 -187 118 -187 l78 0 13 -36 c19 -52 66 -72 129 -55 68
                         18 110 54 143 125 86 182 -30 389 -217 385 -22 0 -50 -4 -64 -8z m136 -42 c57
