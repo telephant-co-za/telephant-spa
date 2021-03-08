@@ -7,7 +7,6 @@ import ExportCard from '../components/ExportCard';
 import FilterCard from '../components/FilterCard';
 import Logo from '../components/Logo';
 import SocialLinks from '../components/SocialLinks';
-import NavLinks from '../components/NavLinks';
 import HeaderTabs from '../components/HeaderTabs';
 import LogoText from '../components/LogoText';
 import UserButtonGroup from '../components/UserButtonGroup'
@@ -39,11 +38,6 @@ storiesOf("Components/SocialLinks", module)
     .add("default", () => {
         return <SocialLinks />;
 })
-storiesOf("Components/NavLinks", module)
-    .add("default", () => {
-        let data = [{title: "Hello"}]
-        return <NavLinks props = {data} />;
-});
 storiesOf("Components/HeaderTabs", module)
     .add("default", () => {
         return <HeaderTabs />;

@@ -25,15 +25,13 @@ export default function NotificationsButtonMenu() {
             <NotificationsNoneOutlinedIcon />
         </IconButton>
         <Menu
-            id="simple-menu"
+            id="notifications-menu"
             anchorEl={anchorEl}
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Help Center</MenuItem>
-          <MenuItem onClick={handleClose}>Video Explainer</MenuItem>
-          <MenuItem onClick={handleClose}>About Telephant</MenuItem>
+          <MenuItem onClick={handleClose}>New Notifications</MenuItem>
         </Menu>
     </>
   );

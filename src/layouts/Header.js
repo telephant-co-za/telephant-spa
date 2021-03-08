@@ -8,7 +8,8 @@ import UserButtonGroup from '../components/UserButtonGroup';
 
 export default function Header (props){
   return (
-    <AppBar position="fixed" elevation={4} style={{ background: '#FFFFFF' }}>
+    <>
+    <AppBar position="flex" elevation={4} style={{ background: '#FFFFFF' }}>
       <Toolbar>
         <Logo color='#ed6524' width="30pt" height="30pt" />
         <Typography  variant="h6" component="h1" color="textPrimary">TelephantCloud</Typography>
@@ -16,5 +17,7 @@ export default function Header (props){
         <UserButtonGroup />
       </Toolbar>
     </AppBar>
+    <Toolbar />
+    </>
   );
 }

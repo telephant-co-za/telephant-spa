@@ -22,11 +22,11 @@ export default function HelpButtonMenu() {
             <HelpOutlineIcon />
         </IconButton>
       <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
+          id="help-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>Help Center</MenuItem>
         <MenuItem onClick={handleClose}>Video Explainer</MenuItem>
