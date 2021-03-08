@@ -30,7 +30,7 @@ export default function HeaderTabs() {
         textColor="primary"
         centered  
       >
-        <Tab icon={<AccountBalanceIcon />} />
+        <Tab icon={<AccountBalanceIcon />} label="Account" />
         <Tab icon={<ListIcon />} />
         <Tab icon={<PeopleIcon />} />
       </Tabs>

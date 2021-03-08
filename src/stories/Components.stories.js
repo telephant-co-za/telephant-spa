@@ -9,7 +9,11 @@ import Logo from '../components/Logo';
 import SocialLinks from '../components/SocialLinks';
 import NavLinks from '../components/NavLinks';
 import HeaderTabs from '../components/HeaderTabs';
-import LogoText from '../components/LogoText'
+import LogoText from '../components/LogoText';
+import UserButtonGroup from '../components/UserButtonGroup'
+import HelpButtonMenu from '../components/HelpButtonMenu'
+import UserButtonMenu from '../components/UserButtonMenu'
+import NotificationsButtonMenu from '../components/NotifcationsButtonMenu'
 
 storiesOf("Components/DataGrid", module)
     .add("default", () => {
@@ -47,6 +51,22 @@ storiesOf("Components/HeaderTabs", module)
 storiesOf("Components/LogoText", module)
     .add("default", () => {
         return <LogoText />;
+})
+storiesOf("Components/UserButtonGroup", module)
+    .add("default", () => {
+        return <UserButtonGroup />;
+})
+storiesOf("Components/HelpButtonMenu", module)
+    .add("default", () => {
+        return <HelpButtonMenu />;
+})
+storiesOf("Components/NotificationsButtonMenu", module)
+    .add("default", () => {
+        return <NotificationsButtonMenu />;
+})
+storiesOf("Components/UserButtonMenu", module)
+    .add("default", () => {
+        return <UserButtonMenu />;
 });
 
 
