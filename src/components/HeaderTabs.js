@@ -27,7 +27,6 @@ export default function HeaderTabs() {
   };
 
   return (
-    <><BrowserRouter>
       <Paper className={classes.root} elevation={0}>
         <Tabs
           value={value}
@@ -41,13 +40,5 @@ export default function HeaderTabs() {
           <Tab icon={<PeopleIcon />} label="Beneficiaries" component={Link} to="beneficiaries" />
         </Tabs>
       </Paper>
-      
-      <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Route exact path="/beneficiaries" component={Beneficiaries} />
-        <Route exact path="/transactions" component={Transactions} />
-      </Switch>
-    </BrowserRouter>
-    </>
   );
 }

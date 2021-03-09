@@ -3,7 +3,8 @@ import { Grid, Card } from '@material-ui/core';
 
 import Header from './Header';
 import Footer from './Footer';
-import Transactions from '../pages/Transactions';
+//import Transactions from '../pages/Transactions';
+import Dashboard from '../pages/Dashboard';
 
 const AppLayout = () => {
 
@@ -13,9 +14,7 @@ const AppLayout = () => {
     <Header />
   </Grid>
   <Grid Item xs={12}>
-    <Card>
-      <Transactions />
-    </Card>
+      <Dashboard />
   </Grid>
   <Grid Item xs={12}>
     <Footer />
