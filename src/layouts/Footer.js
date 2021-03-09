@@ -1,27 +1,38 @@
-import React from "react";
-import {
-    AppBar,
-    Toolbar,
-    Typography
-} from "@material-ui/core";
-import SocialLinks from '../components/SocialLinks.js';
+// React
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
-const Footer = () => <>
-        <AppBar position="static" elevation={0} component="footer" color="default">
-            <SocialLinks />
-            <Toolbar style={{ justifyContent: "center" }}> 
-                <Typography variant="caption">
-                    &copy; Copyright {new Date().getFullYear()}, <a target="_blank" href="https://www.telephantcloud.com">Telephant Cloud</a>
-                    &#8226;
-                    <a href="#">Terms &amp; Conditions</a>
-                    &#8226;
-                    <a href="#">Privacy Policy</a>
-                    &#8226;
-                    <a href="#">Acceptable Usage</a>
-                </Typography>
-                
-            </Toolbar>
-        </AppBar>
-    </>
+// Custom
+import SocialLinks from '../components/SocialLinks';
+import CopyrightNotice from '../components/CopyrightNotice'
 
-export default Footer;
+// Make styles
+const useStyles = makeStyles((theme) => ({
+    footer: {
+      padding: theme.spacing(3, 2),
+      marginTop: 'auto',
+      backgroundColor:
+        theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+    },
+  }));
+  
+// THE COMPONENT
+  export default function Footer() {
+    const classes = useStyles();
+
+// Main stuff  
+    return (
+        <>
+            <CssBaseline />
+                <footer className={classes.footer}>
+                    <Container maxWidth="sm" align="center">
+                        <SocialLinks />
+                        <CopyrightNotice />
+                    </Container>
+                </footer>
+        </>
+    );
+  }

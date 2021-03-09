@@ -1,38 +1,26 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Grid, Card } from '@material-ui/core';
 
 import Header from './Header';
 import Footer from './Footer';
+import Transactions from '../pages/Transactions';
 
 const AppLayout = () => {
 
   return (
-<div
-  css={{
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh'
-  }}>
-  <div
-    css={{
-      padding: 16
-    }}>
+<Grid Container xs={12}>
+  <Grid Item xs={12}>
     <Header />
-  </div>
-  <div
-    css={{
-      flex: '1 1 auto',
-      padding: 16
-    }}>
-  <main></main>
-  </div>
-  <div
-    css={{
-      padding: 16
-    }}>
+  </Grid>
+  <Grid Item xs={12}>
+    <Card>
+      <Transactions />
+    </Card>
+  </Grid>
+  <Grid Item xs={12}>
     <Footer />
-  </div>
-</div>
+  </Grid>
+</Grid>
   );
 };
 

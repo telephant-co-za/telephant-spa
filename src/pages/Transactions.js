@@ -1,15 +1,31 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Grid, Box } from '@material-ui/core';
+
+import ExportCard from '../components/ExportCard'
+import FilterCard from '../components/FilterCard'
+import DataGrid from '../components/DataGrid'
 
 export default function Transactions() {
 
 
   return (
-
-          <Typography component="h1" variant="h6" color="inherit">
-            Transactions
-          </Typography>
-
+<Box p={3}>
+    <Grid container xs="12" sm="12" md="12" lg="12" xl="12" spacing={3} >
+      <Grid item xs="12" md="3">
+        <Grid container spacing={3} direction="column">
+          <Grid item>
+            <FilterCard />
+          </Grid>
+          <Grid item>
+            <ExportCard />
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs="12" md="9">
+        <DataGrid />
+      </Grid>
+    </Grid>
+</Box>
   );
 }
 

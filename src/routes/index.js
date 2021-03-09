@@ -10,7 +10,8 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Dashboard} />
-
+        <Route exact path="/beneficiaries" component={Beneficiaries} />
+        <Route exact path="/transactions" component={Transactions} />
       </Switch>
     </BrowserRouter>
   );
@@ -21,5 +22,5 @@ export default Routes;
 
 
 //<Route component={_ => <ErrorPage status={404} message="Page not found." />} />
-//<Route exact path="/beneficiaries" component={Beneficiaries} />
-//<Route exact path="/transactions" component={Transactions} />
+//
+//
