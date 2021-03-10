@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Transactions from '../pages/Transactions';
 import Beneficiaries from '../pages/Beneficiaries';
 import Dashboard from '../pages/Dashboard';
+import Profile from '../pages/Profile';
 
 const App = () => {
   return (
@@ -17,9 +18,10 @@ const App = () => {
           </Grid>
           <Grid item xs={12}>
             <Switch>
-              <Route exact path="/" component={Dashboard} />
               <Route exact path="/transactions" component={Transactions} />
               <Route exact path="/beneficiaries" component={Beneficiaries} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/" component={Dashboard} />
               <Redirect from="*" to="/" />
             </Switch>
           </Grid>
