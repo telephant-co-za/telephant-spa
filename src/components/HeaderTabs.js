@@ -7,10 +7,6 @@ import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import ListIcon from '@material-ui/icons/List';
 import PeopleIcon from '@material-ui/icons/People';
 import { Link } from 'react-router-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
-import Beneficiaries from '../pages/Beneficiaries';
-import Transactions from '../pages/Transactions';
 
 const useStyles = makeStyles({
   root: {
