@@ -21,8 +21,9 @@ const App = () => {
               <Route exact path="/transactions" component={Transactions} />
               <Route exact path="/beneficiaries" component={Beneficiaries} />
               <Route exact path="/profile" component={Profile} />
-              <Route exact path="/" component={Dashboard} />
-              <Redirect from="*" to="/" />
+              <Route path="/airtime" component={Dashboard} />
+              <Redirect from="/" to="/airtime" />
+              <Redirect from="*" to="/airtime" />
             </Switch>
           </Grid>
           <Grid item xs={12}>

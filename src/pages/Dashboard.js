@@ -5,6 +5,12 @@ import CreditCardIcon from '@material-ui/icons/CreditCard';
 import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 import SendIcon from '@material-ui/icons/Send';
 import CallReceivedIcon from '@material-ui/icons/CallReceived'
+import { Route } from 'react-router-dom'
+
+import BuyAirtime from '../forms/buyAirtime'
+import UseAirtime from '../forms/useAirtime'
+import SendAirtime from '../forms/sendAirtime'
+import RequestAirtime from '../forms/requestAirtime'
 
 
 export default function Dashboard() {
@@ -37,23 +43,27 @@ export default function Dashboard() {
               <Typography variant="h5" gutterBottom>What would you like to do today?</Typography>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<CreditCardIcon />} >Buy Airtime</Button>
+              <Button variant="contained" component="button" href="/airtime/buy" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<CreditCardIcon />} >Buy Airtime</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<PhoneInTalkIcon />}>Use Airtime</Button>
+              <Button variant="contained" component="button" href="/airtime/use" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<PhoneInTalkIcon />}>Use Airtime</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<SendIcon />}>Send Airtime</Button>
+              <Button variant="contained" component="button" href="/airtime/send" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<SendIcon />}>Send Airtime</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<CallReceivedIcon />}>Request Airtime</Button>
+              <Button variant="contained" component="button" href="/airtime/request" color="primary"  style={{maxWidth: '200px', maxHeight: '30px', minWidth: '200px', minHeight: '30px'}} endIcon={<CallReceivedIcon />}>Request Airtime</Button>
             </Grid>
           </Grid>
         </Paper>
       </Grid>
       <Grid item xs="4">
         <Paper>
-          <Typography>What would you like to do today?</Typography>
+          <Typography variant="h5" gutterBottom>What would you like to do today?</Typography>
+          <Route path={'/airtime/buy'} component={BuyAirtime} />
+          <Route path={'/airtime/use'} component={UseAirtime} />
+          <Route path={'/airtime/send'} component={SendAirtime} />
+          <Route path={'/airtime/request'} component={RequestAirtime} />
         </Paper>
       </Grid>
     </Grid>
