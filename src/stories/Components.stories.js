@@ -9,10 +9,11 @@ import Logo from '../components/Logo';
 import SocialLinks from '../components/SocialLinks';
 import HeaderTabs from '../components/HeaderTabs';
 import LogoText from '../components/LogoText';
-import UserButtonGroup from '../components/UserButtonGroup'
-import HelpButtonMenu from '../components/HelpButtonMenu'
-import UserButtonMenu from '../components/UserButtonMenu'
-import NotificationsButtonMenu from '../components/NotifcationsButtonMenu'
+import UserButtonGroup from '../components/UserButtonGroup';
+import HelpButtonMenu from '../components/HelpButtonMenu';
+import UserButtonMenu from '../components/UserButtonMenu';
+import NotificationsButtonMenu from '../components/NotifcationsButtonMenu';
+import DashboardAccountBalance from '../components/DashboardAccountBalance';
 
 storiesOf("Components/DataGrid", module)
     .add("default", () => {
@@ -62,6 +63,9 @@ storiesOf("Components/UserButtonMenu", module)
     .add("default", () => {
         return <UserButtonMenu />;
 });
-
+storiesOf("Components/Dashboard/AccountBalance", module)
+    .add("default", () => {
+        return <DashboardAccountBalance />;
+});
 
 

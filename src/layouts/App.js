@@ -11,25 +11,25 @@ import Profile from '../pages/Profile';
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <Grid container>
-          <Grid item xs={12}>
-            <Header />
-          </Grid>
-          <Grid item xs={12}>
-            <Switch>
-              <Route exact path="/transactions" component={Transactions} />
-              <Route exact path="/beneficiaries" component={Beneficiaries} />
-              <Route exact path="/profile" component={Profile} />
-              <Route path="/airtime" component={Dashboard} />
-              <Redirect from="/" to="/airtime" />
-              <Redirect from="*" to="/airtime" />
-            </Switch>
-          </Grid>
-          <Grid item xs={12}>
-            <Footer />
-          </Grid>
-        </Grid>
+      <BrowserRouter>     
+          <Grid container>
+              <Grid item xs={12}>
+                <Header />
+              </Grid>
+              <Grid item xs={12}>
+                <Switch>
+                  <Route exact path="/transactions" component={Transactions} />
+                  <Route exact path="/beneficiaries" component={Beneficiaries} />
+                  <Route exact path="/profile" component={Profile} />
+                  <Route path="/airtime" component={Dashboard} />
+                  <Redirect from="/" to="/airtime" />
+                  <Redirect from="*" to="/airtime" />
+                </Switch>
+              </Grid>
+              <Grid item xs={12}>
+                <Footer />
+              </Grid>
+            </Grid>
       </BrowserRouter>
   );
 };
