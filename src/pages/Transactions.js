@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 
 import ExportCard from '../components/ExportCard'
-import FilterCard from '../components/FilterCard'
-import DataGrid from '../components/DataGrid'
+import TransactionsFilterCard from '../components/TransactionsFilterCard'
+import TransactionsDataGrid from '../components/TransactionsDataGrid'
 
 export default function Transactions() {
 
@@ -14,7 +14,7 @@ export default function Transactions() {
       <Grid item xs="12" md="3">
         <Grid container spacing={3} direction="column">
           <Grid item>
-            <FilterCard />
+            <TransactionsFilterCard />
           </Grid>
           <Grid item>
             <ExportCard />
@@ -22,7 +22,7 @@ export default function Transactions() {
         </Grid>
       </Grid>
       <Grid item xs="12" md="9">
-        <DataGrid />
+        <TransactionsDataGrid />
       </Grid>
     </Grid>
 </Box>

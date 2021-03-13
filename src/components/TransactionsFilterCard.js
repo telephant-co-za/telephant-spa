@@ -8,7 +8,7 @@ import DatePicker from './DatePicker'
 
 // Implement CSS Styles here...
 
-export default function TransactionsExportCard(props) {
+export default function TransactionsFilterCard(props) {
     //const classes = useStyles();
 
     return (
