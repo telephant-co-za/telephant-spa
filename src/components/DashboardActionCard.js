@@ -11,11 +11,11 @@ export default function DashboardActionCard() {
     return (
         <Card>
             <CardHeader title="What would you like to do today?" />
-            <Box>
-                <DashboardActionCardButton text='Buy Airtime' icon={<CreditCardIcon />} />
-                <DashboardActionCardButton text='Use Airtime' icon={<PhoneInTalkIcon />} />
-                <DashboardActionCardButton text='Send Airtime' icon={<SendIcon />} />
-                <DashboardActionCardButton text='Request Airtime' icon={<CallReceivedIcon />} />
+            <Box mb={5}>
+                <DashboardActionCardButton icon={<CreditCardIcon />} subform='buy'/>
+                <DashboardActionCardButton icon={<PhoneInTalkIcon />} subform='use' />
+                <DashboardActionCardButton icon={<SendIcon />} subform='send' />
+                <DashboardActionCardButton icon={<CallReceivedIcon />} subform='request' />
             </Box>
         </Card>
     );

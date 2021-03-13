@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+import { Box, Button, Card, CardHeader, CardContent, CardActions, Input, InputLabel, InputAdornment, FormLabel } from '@material-ui/core';
 
-export class FormUserDetails extends Component {
+export class SubformUserAirtimeStep1 extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -13,38 +10,40 @@ export class FormUserDetails extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <Box p={3}>
-        <Typography component="h1" variant="h5" gutterBottom>
-          Use Airtime
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-        body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-        unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-        dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
-        </Typography>
-        <form noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Amount"
-            name="amount"
-            autoFocus
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-          >
-            Sign In
-          </Button>
-        </form>
-      </Box>
+              <Card style={{height: '100%'}}>
+                <CardHeader title="Use Your Airtime" />
+                <CardContent>
+                  <form noValidate>
+                    <Box mb={3}>
+                      <FormLabel>
+                        You have R {}.00 airtime available.  Please enter the amount you wish
+                        to use in the Amount field below.
+                      </FormLabel>
+                    </Box>
+                    <InputLabel htmlFor="standard-adornment-amount">Amount</InputLabel>
+                    <Input
+                      id="standard-adornment-amount"
+                      value={values.amount}
+                      onChange={handleChange("amount")}
+                      startAdornment={
+                        <InputAdornment position="start" margin="dense">
+                          R
+                        </InputAdornment>
+                      }
+                    />
+                    <CardActions style={{ justifyContent: 'center' }}>
+                      <Box mt={3}>
+                        <Button variant="contained" color="primary">
+                          Use Airtime Now
+                        </Button>
+                      </Box>
+                    </CardActions>
+                  </form>
+                </CardContent>
+              </Card>
     );
   }
 }
 
-export default FormUserDetails;
+export default SubformUserAirtimeStep1;
+

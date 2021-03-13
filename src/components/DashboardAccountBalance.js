@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Typography, Grid, Card, CardHeader, CardContent, CardActions, Box } from '@material-ui/core';
+import { Button, Typography, Grid, Card, CardHeader, CardContent, CardActions, Box } from '@material-ui/core';
 import { sizing } from '@material-ui/system';
 
 export default function DashboardAccountBalance() {
@@ -10,10 +10,12 @@ export default function DashboardAccountBalance() {
             <CardContent>
                 <Typography variant="h2" align="center" color="primary" noWrap="true">R 123.03</Typography>
             </CardContent>
-            <CardActions>
-                <Typography>
-                    <Link href="/transactions" variant="subtitle">Transactions...</Link>
-                </Typography>                
+            <CardActions style={{ justifyContent: 'center' }}>
+                <Box mt={3}>
+                    <Button variant="contained" color="primary">
+                          Transactions...
+                    </Button>
+                </Box>
             </CardActions>
         </Card>
     );

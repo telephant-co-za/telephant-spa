@@ -24,12 +24,10 @@ export default function Dashboard() {
         <DashboardActionCard />
       </Grid>
       <Grid item xs="4">
-        <Paper>
           <Route path={'/airtime/buy'} component={FormBuyAirtime} />
           <Route path={'/airtime/use'} component={FormUseAirtime} />
           <Route path={'/airtime/send'} component={FormSendAirtime} />
           <Route path={'/airtime/request'} component={FormRequestAirtime} />
-        </Paper>
       </Grid>
     </Grid>
   </Box>
