@@ -9,11 +9,10 @@ export default function UserButtonGroup() {
     <div>
       <ButtonGroup 
             color="primary" 
-            aria-label="outlined primary button group" 
-            disableRipple="true" 
-            disableFocusRipple="true">
-        <HelpButtonMenu />
-        <NotifcationsButtonMenu />
+            disableRipple 
+            disableFocusRipple>
+                  <HelpButtonMenu />
+                  <NotifcationsButtonMenu />
         <UserButtonMenu />
       </ButtonGroup>
     </div>

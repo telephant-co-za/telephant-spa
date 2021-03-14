@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { PDFViewer } from '@react-pdf/renderer';
-import { Box } from "@material-ui/core";
 
 import TransactionsPDF from './TransactionsPDF';
 

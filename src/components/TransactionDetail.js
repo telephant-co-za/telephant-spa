@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Card, CardHeader, CardContent, Typography} from '@material-ui/core';
+import { Paper, Table, TableCell, TableContainer, TableRow, Card, CardHeader, CardContent } from '@material-ui/core';
 import { withRouter } from "react-router";
 
+
+/*
 // Note rename Icons to make easier to match to Actions
 import BuyIcon from '@material-ui/icons/CreditCard';
 import UseIcon from '@material-ui/icons/PhoneInTalk';
@@ -10,7 +12,7 @@ import ReceiveIcon from '@material-ui/icons/CallReceived'
 import DefaultIcon from '@material-ui/icons/Help'  // Shouldn't show
 import WithdrawIcon from '@material-ui/icons/LocalAtm';
 
-const currencyFormatter = new Intl.NumberFormat('en-ZA', {
+ const currencyFormatter = new Intl.NumberFormat('en-ZA', {
   style: 'currency',
   currency: 'ZAR',
 });
@@ -61,7 +63,7 @@ function getIcon(params: ValueGetterParams) {
 
 const row = [
   { id: 'cJYXv14t0P', icon: 1, type: 'Deposit', timestamp: '2020-03-25T12:16:44Z', amount: 100.00 },
-];
+]; */
 
 
 const TransactionDetail = props => {
