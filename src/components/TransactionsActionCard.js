@@ -28,19 +28,19 @@ export default function TransactionsActionCard(props) {
             <CardHeader title="Export Options"  align="center" />
             <CardContent>
                 <CardActions style={{ justifyContent: 'center' }}>
-                    <Fab variant="extented" color="primary" style={{ width: '200px' }}>
+                    <Fab variant="extended" color="primary" style={{ width: '200px' }}>
                         <MailIcon />
                         Send PDF
                     </Fab>
                 </CardActions >
                 <CardActions style={{ justifyContent: 'center' }}>
-                    <Fab variant="extented" color="primary" style={{ width: '200px' }} href={link}>
+                    <Fab variant="extended" color="primary" style={{ width: '200px' }} href={link}>
                         <PdfIcon />
                         View PDF
                     </Fab>
                 </CardActions>
                 <CardActions style={{ justifyContent: 'center' }}>
-                    <Fab variant="extented" color="primary" style={{ width: '200px'}}  onClick={() => { csvBuilder(); }}>
+                    <Fab variant="extended" color="primary" style={{ width: '200px'}}  onClick={() => { csvBuilder(); }}>
                         <DownloadIcon />
                         Download CSV
                     </Fab>

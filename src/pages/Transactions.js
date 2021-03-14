@@ -12,15 +12,15 @@ export default function Transactions() {
 
   return (
         <Box p={3}>
-            <Grid container xs="12" sm="12" md="12" lg="12" xl="12" spacing={3} >
-              <Grid item xs="12" md="3">
+            <Grid container spacing={3} >
+              <Grid item xs={12} md={3}>
                 <Grid container spacing={3} direction="column">
                   <Grid item>
                     <TransactionsActionCard />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs="12" md="9">
+              <Grid item xs={12} md={9}>
                 <Switch>
                   <Route exact path={'/transactions'} component={TransactionsDataGrid} />
                   <Route path={'/transactions/item/:itemId'} component={TransactionDetail} />
