@@ -18,7 +18,7 @@ const App = () => {
               </Grid>
               <Grid item xs={12}>
                 <Switch>
-                  <Route exact path="/transactions" component={Transactions} />
+                  <Route path="/transactions" component={Transactions} />
                   <Route exact path="/beneficiaries" component={Beneficiaries} />
                   <Route exact path="/profile" component={Profile} />
                   <Route path="/airtime" component={Dashboard} />
