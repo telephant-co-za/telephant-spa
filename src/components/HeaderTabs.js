@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import HomeIcon from '@material-ui/icons/Home';
 import ListIcon from '@material-ui/icons/List';
 import PeopleIcon from '@material-ui/icons/People';
 import { Link } from 'react-router-dom';
@@ -31,9 +31,9 @@ export default function HeaderTabs() {
           textColor="primary"
           centered  
         >
-          <Tab icon={<AccountBalanceIcon />} label="Account" component={Link} to="/" />
-          <Tab icon={<ListIcon />} label="Transactions" component={Link} to="transactions" />
-          <Tab icon={<PeopleIcon />} label="Beneficiaries" component={Link} to="beneficiaries" />
+          <Tab icon={<HomeIcon />} label="Airtime" component={Link} to="/" />
+          <Tab icon={<ListIcon />} label="Transactions" component={Link} to="/transactions" />
+          <Tab icon={<PeopleIcon />} label="Friends" component={Link} to="/beneficiaries" />
         </Tabs>
       </Paper>
   );

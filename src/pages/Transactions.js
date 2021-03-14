@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 
-import ExportCard from '../components/ExportCard'
+import TransactionsExportCard from '../components/TransactionsExportCard'
 import TransactionsFilterCard from '../components/TransactionsFilterCard'
 import TransactionsDataGrid from '../components/TransactionsDataGrid'
 
@@ -17,7 +17,7 @@ export default function Transactions() {
             <TransactionsFilterCard />
           </Grid>
           <Grid item>
-            <ExportCard />
+            <TransactionsExportCard />
           </Grid>
         </Grid>
       </Grid>
