@@ -1,8 +1,6 @@
 import React from 'react';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import { Menu, MenuItem, IconButton } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import IconButton from '@material-ui/core/IconButton'
 
 export default function HeaderHelpButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
