@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Logo({ color, width, height }) {
+export default function HeaderLogo({ color, width, height }) {
     return(
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width={width} height={height} viewBox="0 0 60.000000 60.000000"

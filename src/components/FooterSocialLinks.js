@@ -1,9 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import Toolbar from '@material-ui/core/Toolbar';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { Typography, BottomNavigation, Toolbar, BottomNavigationAction } from '@material-ui/core';
+
 import FacebookIcon from '@material-ui/icons/Facebook';
 import ShareIcon from '@material-ui/icons/Share';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -14,7 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SocialLinks() {
+export default function FooterSocialLinks() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 

@@ -5,9 +5,10 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
 import Transactions from '../pages/Transactions';
-import Beneficiaries from '../pages/Beneficiaries';
+import Contacts from '../pages/Contacts';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
+//import NotFound from '../pages/NotFound'
 
 const App = () => {
   return (
@@ -19,11 +20,11 @@ const App = () => {
               <Grid item xs={12}>
                 <Switch>
                   <Route path="/transactions" component={Transactions} />
-                  <Route exact path="/beneficiaries" component={Beneficiaries} />
+                  <Route exact path="/beneficiaries" component={Contacts} />
                   <Route exact path="/profile" component={Profile} />
                   <Route path="/airtime" component={Dashboard} />
+                  {/* <Route component={NotFound} /> */}
                   <Redirect from="/" to="/airtime" />
-                  <Redirect from="*" to="/airtime" />
                 </Switch>
               </Grid>
               <Grid item xs={12}>

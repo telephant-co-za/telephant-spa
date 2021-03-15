@@ -1,10 +1,10 @@
 import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import IconButton from '@material-ui/core/IconButton'
 
-export default function HelpButtonMenu() {
+export default function HeaderUserButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -19,18 +19,17 @@ export default function HelpButtonMenu() {
   return (
     <>
         <IconButton color="primary" aria-label="upload picture" component="span" onClick={handleClick}>
-            <HelpOutlineIcon />
+            <AccountCircleOutlinedIcon />
         </IconButton>
       <Menu
-          id="help-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Help Center</MenuItem>
-        <MenuItem onClick={handleClose}>Video Explainer</MenuItem>
-        <MenuItem onClick={handleClose}>About Telephant</MenuItem>
+        <MenuItem onClick={handleClose}>My Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </>
   );

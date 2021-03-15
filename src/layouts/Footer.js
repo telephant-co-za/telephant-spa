@@ -1,12 +1,11 @@
 // React
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import { Container, CssBaseline } from '@material-ui/core';
 
 // Custom
-import SocialLinks from '../components/SocialLinks';
-import CopyrightNotice from '../components/CopyrightNotice'
+import FooterSocialLinks from '../components/FooterSocialLinks';
+import FooterCopyrightNotice from '../components/FooterCopyrightNotice'
 
 // Make styles
 const useStyles = makeStyles((theme) => ({
@@ -28,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
             <CssBaseline />
                 <footer className={classes.footer}>
                     <Container maxWidth="sm" align="center">
-                        <SocialLinks />
-                        <CopyrightNotice />
+                        <FooterSocialLinks />
+                        <FooterCopyrightNotice />
                     </Container>
                 </footer>
         </>
