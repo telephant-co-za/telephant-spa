@@ -1,7 +1,9 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
+import theme from './Theme'
 import Header from './Header';
 import Footer from './Footer';
 import Transactions from '../pages/Transactions';
@@ -12,6 +14,7 @@ import Profile from '../pages/Profile';
 
 const App = () => {
   return (
+    <ThemeProvider theme={theme}>
       <BrowserRouter>     
           <Grid container>
               <Grid item xs={12}>
@@ -32,6 +35,7 @@ const App = () => {
               </Grid>
             </Grid>
       </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
