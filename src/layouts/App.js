@@ -10,6 +10,7 @@ import Transactions from '../pages/Transactions';
 import Contacts from '../pages/Contacts';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
+import SignIn from '../pages/SignIn';
 //import NotFound from '../pages/NotFound'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
                   <Route exact path="/beneficiaries" component={Contacts} />
                   <Route exact path="/profile" component={Profile} />
                   <Route path="/airtime" component={Dashboard} />
+                  <Route path="/signin" component={SignIn} />
                   {/* <Route component={NotFound} /> */}
                   <Redirect from="/" to="/airtime" />
                 </Switch>

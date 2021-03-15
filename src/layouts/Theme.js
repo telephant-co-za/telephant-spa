@@ -1,6 +1,7 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber';
 import blueGrey from '@material-ui/core/colors/blueGrey';
+import { grey } from '@material-ui/core/colors';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -15,6 +16,10 @@ export default createMuiTheme({
         },
         secondary: {
             main: blueGrey[50]
+        },
+        background: {
+            default: grey[200],
+            paper: '#ffffff'
         }
     },
     typography: {

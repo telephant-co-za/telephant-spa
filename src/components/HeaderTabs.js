@@ -26,7 +26,7 @@ export default function HeaderTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
+          indicatorColor="primary"
           textColor="primary"
           centered  
         >
