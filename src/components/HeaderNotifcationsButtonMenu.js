@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import IconButton from '@material-ui/core/IconButton';
 
-export default function NotificationsButtonMenu() {
+export default function HeaderNotificationsButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {

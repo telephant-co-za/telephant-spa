@@ -1,71 +1,84 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import DataGrid from '../components/DataGrid';
-import DatePicker from '../components/DatePicker';
-import ExportCard from '../components/ExportCard';
-import FilterCard from '../components/FilterCard';
-import Logo from '../components/Logo';
-import SocialLinks from '../components/SocialLinks';
-import HeaderTabs from '../components/HeaderTabs';
-import LogoText from '../components/LogoText';
-import UserButtonGroup from '../components/UserButtonGroup';
-import HelpButtonMenu from '../components/HelpButtonMenu';
-import UserButtonMenu from '../components/UserButtonMenu';
-import NotificationsButtonMenu from '../components/NotifcationsButtonMenu';
-import DashboardAccountBalance from '../components/DashboardAccountBalance';
+import DashboardAccountBalance from '../components/DashboardAccountBalance'              
+import DashboardActionCard from '../components/DashboardActionCard'       
+import DashboardActionCardButton from '../components/DashboardActionCardButton'               
+import FooterCopyrightNotice from '../components/FooterCopyrightNotice'  
+import FooterSocialLinks from '../components/FooterSocialLinks' 
+import HeaderHelpButtonMenu from '../components/HeaderHelpButtonMenu' 
+import HeaderLogo from '../components/HeaderLogo' 
+import HeaderNotifcationsButtonMenu from '../components/HeaderNotifcationsButtonMenu' 
+import HeaderTabs from '../components/HeaderTabs' 
+import HeaderUserButtonGroup from '../components/HeaderUserButtonGroup' 
+import HeaderUserButtonMenu from '../components/HeaderUserButtonMenu' 
+import TransactionsActionCard from '../components/TransactionsActionCard' 
+import TransactionsDataGrid from '../components/TransactionsDataGrid' 
+import TransactionsPDF from '../components/TransactionsPDF' 
+import TransactionsViewPDF from '../components/TransactionsViewPDF' 
+import TransactionDetail from '../components/TransactionDetail' 
 
-storiesOf("Components/DataGrid", module)
+storiesOf("Components/Dashboard/AccountBalance", module)
     .add("default", () => {
-            return <DataGrid />;
+            return <DashboardAccountBalance />;
           })
-storiesOf("Components/DatePicker", module)
+storiesOf("Components/Dashboard/ActionCard", module)
     .add("default", () => {
-        return <DatePicker />;
+        return <DashboardActionCard />;
     })
-storiesOf("Components/ExportCard", module)
+storiesOf("Components/Dashboard/ActionCardButton", module)
     .add("default", () => {
-        return <ExportCard />;
+        return <DashboardActionCardButton />;
     })
-storiesOf("Components/FilterCard", module)
+storiesOf("Components/Footer/CopyrightNotice", module)
     .add("default", () => {
-        return <FilterCard />;
+        return <FooterCopyrightNotice />;
     })
-storiesOf("Components/Logo", module)
+storiesOf("Components/Footer/SocialLinks", module)
     .add("default", () => {
-        return <Logo />;
+        return <FooterSocialLinks />;
 })
-storiesOf("Components/SocialLinks", module)
+storiesOf("Components/Header/HelpButtonMenu", module)
     .add("default", () => {
-        return <SocialLinks />;
+        return <HeaderHelpButtonMenu />;
 })
-storiesOf("Components/HeaderTabs", module)
+storiesOf("Components/Header/HeaderLogo", module)
+    .add("default", () => {
+        return <HeaderLogo />;
+})
+storiesOf("Components/Header/HeaderNotifcationsButtonMenu", module)
+    .add("default", () => {
+        return <HeaderNotifcationsButtonMenu />;
+})
+storiesOf("Components/Header/HeaderTabs", module)
     .add("default", () => {
         return <HeaderTabs />;
 })
-storiesOf("Components/LogoText", module)
+storiesOf("Components/Header/HeaderUserButtonGroup", module)
     .add("default", () => {
-        return <LogoText />;
+        return <HeaderUserButtonGroup />;
 })
-storiesOf("Components/UserButtonGroup", module)
+storiesOf("Components/Header/HeaderUserButtonMenu", module)
     .add("default", () => {
-        return <UserButtonGroup />;
+        return <HeaderUserButtonMenu />;
 })
-storiesOf("Components/HelpButtonMenu", module)
+storiesOf("Components/Transactions/TransactionDetail", module)
     .add("default", () => {
-        return <HelpButtonMenu />;
-})
-storiesOf("Components/NotificationsButtonMenu", module)
-    .add("default", () => {
-        return <NotificationsButtonMenu />;
-})
-storiesOf("Components/UserButtonMenu", module)
-    .add("default", () => {
-        return <UserButtonMenu />;
+        return <TransactionDetail />;
 });
-storiesOf("Components/Dashboard/AccountBalance", module)
+storiesOf("Components/Transactions/TransactionsActionCard", module)
     .add("default", () => {
-        return <DashboardAccountBalance />;
+        return <TransactionsActionCard />;
 });
-
-
+storiesOf("Components/Transactions/TransactionsDataGrid", module)
+    .add("default", () => {
+        return <TransactionsDataGrid />;
+});
+storiesOf("Components/Transactions/TransactionsPDF", module)
+    .add("default", () => {
+        return <TransactionsPDF />;
+});
+storiesOf("Components/Transactions/TransactionsViewPDF", module)
+    .add("default", () => {
+        return <TransactionsViewPDF />;
+});

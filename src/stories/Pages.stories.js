@@ -2,16 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Dashboard from '../pages/Dashboard';
-import Beneficiaries from '../pages/Beneficiaries';
+import Contacts from '../pages/Contacts';
 import Transactions from '../pages/Transactions';
 
 storiesOf("Pages/Dashboard", module)
     .add("default", () => {
             return <Dashboard />;
           })
-storiesOf("Pages/Beneficiaries", module)
+storiesOf("Pages/Contacts", module)
     .add("default", () => {
-        return <Beneficiaries />;
+        return <Contacts />;
     })
 storiesOf("Pages/Transactions", module)
     .add("default", () => {
