@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, MenuItem, IconButton, Link } from '@material-ui/core';
-
+import Amplify, { Auth } from 'aws-amplify';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 export default function HeaderUserButtonMenu() {
@@ -13,6 +13,14 @@ export default function HeaderUserButtonMenu() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const signOut = async() => {
+    try {
+      await Auth.signOut();
+    } catch(error) {
+      console.log('error signing out ', error)
+    }
   };
 
   return (
@@ -28,8 +36,8 @@ export default function HeaderUserButtonMenu() {
         onClose={handleClose}
       >
         
-        <MenuItem component="a" href="/signin">Click Me</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem component="a" href="/signin">My Account</MenuItem>
+        <MenuItem onClick={signOut}>Sign Out</MenuItem>
           
       </Menu>
     </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
@@ -12,6 +13,11 @@ import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 import SignIn from '../pages/SignIn';
 //import NotFound from '../pages/NotFound'
+
+import Amplify from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
 
 const App = () => {
   return (
@@ -41,4 +47,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);
