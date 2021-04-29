@@ -107,9 +107,9 @@ Africa's Talking has an API that developers can use to build apps that can send 
 **4) Banking as a Service**
 There are a large number of "unbankable" people in South Africa. This has a complex explanation. Undocumented immigrants, for example, do not have official documents or addresses. However the key explanation is that the cost of opening and maintaining a bank account is prohibitively high. Therefore people should be able to share "credit" on the app and give them some of the services of banking.
 
-This means that credit on the app begins to function like a currency. For example, if an informal vendor sells you anything (say, a banana) for 80c and you need 20c in change, you might get your change in the form of sweets (Chappies chewing gums). Chappies chewing gum has effectively become a form of currency among informal traders.  So the system's liquidity is going to be its utility. People will still need airtime and data and will transfer it in small denominations, making it a currency replacement at that level.
+This means that credit on the app begins to function like a currency. For example, if an informal vendor sells you anything - say, a banana for 80c and you need 20c in change, you might get your change in the form of sweets (Chappies chewing gums). Chappies chewing gum has effectively become a form of currency among informal traders.  So the system's liquidity is going to be its utility. People will still need airtime and data and will transfer it in small denominations, making it a currency replacement at that level.
 
-Beta
+## Beta Version
 Currently, the app is a working beta version of the final product. Before the application can go live, there are a few things that need to happen. The API must be linked to a USSD gateway, and thorough user testing must be completed before moving to a completely redundant, cloud-based infrastructure.
 
 
