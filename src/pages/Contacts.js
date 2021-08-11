@@ -9,8 +9,9 @@ import EditIcon from '@material-ui/icons/Edit';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 import SendIcon from '@material-ui/icons/Send';
-import {useEffect, useState} from "react";
-import axios from 'axios'
+import { useContext } from "react";
+//import { getContacts } from "../api/api";
+import { ContactsContext } from "../contexts/ContactsContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,17 +34,10 @@ function makeName(firstName, lastName)
     return label
 }
 
-export default function Contacts() {
+const Contacts = (props) => {
 
-  const [contacts, setContacts] = useState([])
-
-  useEffect(() => {
-    axios
-      .get('http://www.telephant.co.za/contacts.json')
-      .then(response => {
-        setContacts(response.data.results)
-      })
-  }, [])
+    const context = useContext(ContactsContext);
+    const { contacts } = context;
 
     return (
       <Box  p={2}>
@@ -92,3 +86,5 @@ export default function Contacts() {
       </Box>
     );
   };
+
+  export default Contacts;

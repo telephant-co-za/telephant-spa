@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 
-export const muiTheme = createMuiTheme({
+export const muiTheme = createTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,

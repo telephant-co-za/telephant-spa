@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 import HeaderLogo from '../components/HeaderLogo';
 import HeaderTabs from '../components/HeaderTabs';

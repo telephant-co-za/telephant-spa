@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import { Redirect } from "react-router-dom";
-import { AuthContext } from '../auth/authContext';
+//import { AuthContext } from '../auth/authContext';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,21 +24,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SignInPage = props => {
-  const context = useContext(AuthContext)
+  //const context = useContext(AuthContext)
   const [telephoneNumber, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const classes = useStyles();
 
   const login = () => {
-    context.authenticate(telephoneNumber, password);
+    //context.authenticate(telephoneNumber, password);
   };
 
   // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
   const { from } = props.location.state || { from: { pathname: "/" } };
 
-  if (context.isAuthenticated === true) 
+  //if (context.isAuthenticated === true) 
         {
             return <Redirect to={from} />;
         }

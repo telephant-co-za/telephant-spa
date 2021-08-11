@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, MenuItem, IconButton, Link } from '@material-ui/core';
+import { Menu, MenuItem, IconButton } from '@material-ui/core';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 export default function HeaderUserButtonMenu() {

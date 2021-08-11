@@ -1,7 +1,11 @@
 import React from 'react';
 import axios from 'axios'
 import {useEffect, useState} from "react";
-import { DataGrid } from '@material-ui/data-grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Button from '@material-ui/core/Button';
 
 import InfoIcon from '@material-ui/icons/Info';
 import DefaultIcon from '@material-ui/icons/Help'
@@ -13,10 +17,9 @@ import { green } from '@material-ui/core/colors';
 import { red } from '@material-ui/core/colors';
 import { blue } from '@material-ui/core/colors';
 
-const zarDateTime = {
-    type: 'dateTime',
-    valueFormatter: ({ value }) => datetimeFormatter.format(parseISOString(value)),
-  };
+  function zarDateTime(value) {
+      return datetimeFormatter.format(parseISOString(value))
+    };
 
   const datetimeFormatter = new Intl.DateTimeFormat('en-GB', { 
     year: 'numeric',
@@ -33,14 +36,6 @@ const zarDateTime = {
     }
 
 };
-
-const columns = [
-    { field: '_id',           headerName: 'id', hide: true},
-    { field: 'type',          headerName: '-', renderCell: (params) => (Icon(params.getValue(params.id, 'type'))), flex: 0.5, renderHeader: (params) => (null)},
-    { field: 'read',          headerName: '-', renderCell: (params) => (ReadOrNot(params.getValue(params.id, 'read'))), flex: 0.5, renderHeader: (params) => (null)},
-    { field: "dateTime",      headerName: 'Day', ...zarDateTime, width: 100, renderHeader: (params) => (null)},
-    { field: "message",       headerName: 'Message', minWidth: 400, renderHeader: (params) => (null)}
-    ];
 
     function Icon(value) {
         switch(value) {
@@ -67,7 +62,7 @@ const columns = [
 
 export default function NotificationsList(props) {
 
-    const [rows, setNotifications] = useState([])
+    const [notifications, setNotifications] = useState([])
 
     useEffect(() => {
         axios
@@ -77,18 +72,18 @@ export default function NotificationsList(props) {
         })
     }, [])
 
-        return (
-                  <DataGrid 
-                    rows={rows} 
-                    columns={columns} 
-                    pageSize={5} 
-                    autoHeight 
-                    autoWidth
-                    disableColumnSelector 
-                    hideFooterSelectedRowCount 
-                    pagination
-                    rowsPerPageOptions={[10]} 
-                    />
-    );
 
-}
+
+          return (
+            notifications.map((notification, key) => { return (
+              <ListItem>
+                <ListItemAvatar>
+                    {ReadOrNot(notification.read)}
+                </ListItemAvatar>
+                <ListItemAvatar>
+                    {Icon(notification.type)}
+                </ListItemAvatar>
+                <ListItemText primary={notification.message} secondary={zarDateTime(notification.dateTime)} />
+              </ListItem>
+          )}))
+};

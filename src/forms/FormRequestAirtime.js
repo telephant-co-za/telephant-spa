@@ -19,8 +19,6 @@ export default function FormRequestAirtime() {
           <InputLabel htmlFor="standard-adornment-amount">How much?</InputLabel>
           <Input
             id="standard-adornment-amount"
-            //value={values.amount}
-            //onChange={handleChange("amount")}
             startAdornment={
               <InputAdornment position="start" margin="dense">
                 R

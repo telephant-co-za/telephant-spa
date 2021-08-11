@@ -1,22 +1,34 @@
 import React from 'react';
-import { Menu, MenuItem, IconButton } from '@material-ui/core';
+import { Menu, MenuItem, IconButton, List, ListItem, Button, Grid } from '@material-ui/core';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import Badge from '@material-ui/core/Badge';
 import {useEffect, useState} from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios'
 import NotificationsList from './NotificationsList'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: 'white'
+  },
+});
 
 export default function HeaderNotificationsButtonMenu() {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const markAllRead = () => {
+    console.log("Mark all as read!!!")
+  }
 
   const [count, setCount] = useState([])
 
@@ -45,8 +57,20 @@ export default function HeaderNotificationsButtonMenu() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-          <MenuItem onClick={handleClose} style={{ width: '620px' }}>
-            <NotificationsList />
+          <MenuItem>
+            <List>
+              <ListItem>
+                  <Grid container justify="flex-end" width="100%">
+                    <HighlightOffIcon onClick={handleClose} edge='end'/>
+                  </Grid>
+              </ListItem>
+                <NotificationsList />
+              <ListItem>
+                <Button variant="contained" onClick={markAllRead} color="primary">
+                  Read All
+                </Button>
+              </ListItem>
+            </List>
           </MenuItem>
         </Menu>
     </>
