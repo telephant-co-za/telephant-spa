@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import FormBuyAirtime from '../forms/FormBuyAirtime';
 import FormUseAirtime from '../forms/FormUseAirtime';
@@ -11,6 +11,7 @@ import DashboardActionCard from '../components/DashboardActionCard';
 
 
 export default function Dashboard() {
+
   return (
     <Box p={3}>
     <Grid container spacing={3}>
@@ -21,10 +22,12 @@ export default function Dashboard() {
         <DashboardActionCard />
       </Grid>
       <Grid item xs={4}>
-          <Route path={'/airtime/buy'} component={FormBuyAirtime} />
+        <Switch>   
           <Route path={'/airtime/use'} component={FormUseAirtime} />
           <Route path={'/airtime/send'} component={FormSendAirtime} />
           <Route path={'/airtime/request'} component={FormRequestAirtime} />
+          <Route path={'/airtime'} component={FormBuyAirtime} />
+        </Switch>
       </Grid>
     </Grid>
   </Box>

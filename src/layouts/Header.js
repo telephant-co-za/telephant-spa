@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import * as React from 'react'
+import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
 
 import HeaderLogo from '../components/HeaderLogo';
 import HeaderTabs from '../components/HeaderTabs';
@@ -10,8 +10,8 @@ const Header = (props) => {
     <>
     <AppBar elevation={4} style={{ background: '#FFFFFF' }} position="fixed">
       <Toolbar>
-        <HeaderLogo color='#ed6524' width="30pt" height="30pt" />
-        <Typography  variant="h6" component="h1" color="textPrimary">TelephantCloud</Typography>
+          <HeaderLogo color='#ed6524' width="30pt" height="30pt" />
+          <Typography  variant="h4" color="textPrimary">Telephant</Typography>
         <HeaderTabs />
         <HeaderUserButtonGroup />
       </Toolbar>

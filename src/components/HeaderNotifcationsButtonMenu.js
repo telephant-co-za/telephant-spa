@@ -1,6 +1,10 @@
 import React from 'react';
 import { Menu, MenuItem, IconButton } from '@material-ui/core';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
+import Badge from '@material-ui/core/Badge';
+import {useEffect, useState} from "react";
+import axios from 'axios'
+import NotificationsList from './NotificationsList'
 
 export default function HeaderNotificationsButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,13 +18,25 @@ export default function HeaderNotificationsButtonMenu() {
     setAnchorEl(null);
   };
 
+  const [count, setCount] = useState([])
+
+  useEffect(() => {
+    axios
+      .get('http://www.telephant.co.za/count.json')
+      .then(response => {
+        setCount(response.data.unread)
+      })
+  }, [])
+
   return (
     <>
         <IconButton 
             color="primary" 
             aria-label="upload picture" 
             onClick={handleClick}>
-            <NotificationsNoneOutlinedIcon />
+              <Badge badgeContent={count} color="primary">
+                <NotificationsNoneOutlinedIcon />
+              </Badge>
         </IconButton>
         <Menu
             id="notifications-menu"
@@ -29,7 +45,9 @@ export default function HeaderNotificationsButtonMenu() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>New Notifications</MenuItem>
+          <MenuItem onClick={handleClose} style={{ width: '620px' }}>
+            <NotificationsList />
+          </MenuItem>
         </Menu>
     </>
   );

@@ -43,6 +43,7 @@ export class FormUseAirtime extends Component {
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
+            style={{height: '100%'}}
           />
         );
 /*       case 2:

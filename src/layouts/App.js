@@ -1,5 +1,4 @@
 import React from 'react';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
@@ -13,17 +12,17 @@ import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 import SignIn from '../pages/SignIn';
 //import NotFound from '../pages/NotFound'
-
-import Amplify from 'aws-amplify';
-import awsconfig from '../aws-exports';
-
-Amplify.configure(awsconfig);
+import AuthHeader from "../auth/authHeader";
+import AuthProvider from "../auth/authContext";
+import PrivateRoute from "../auth/privateRoute";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>     
-          <Grid container>
+      <BrowserRouter>
+        <AuthProvider>
+          <AuthHeader />     
+            <Grid container>
               <Grid item xs={12}>
                 <Header />
               </Grid>
@@ -31,7 +30,7 @@ const App = () => {
                 <Switch>
                   <Route path="/transactions" component={Transactions} />
                   <Route exact path="/beneficiaries" component={Contacts} />
-                  <Route exact path="/profile" component={Profile} />
+                  <Route  exact path="/profile" component={Profile} />
                   <Route path="/airtime" component={Dashboard} />
                   <Route path="/signin" component={SignIn} />
                   {/* <Route component={NotFound} /> */}
@@ -42,9 +41,10 @@ const App = () => {
                 <Footer />
               </Grid>
             </Grid>
+          </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
   );
 };
 
-export default withAuthenticator(App);
+export default App;

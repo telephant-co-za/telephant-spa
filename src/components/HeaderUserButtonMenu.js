@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, MenuItem, IconButton, Link } from '@material-ui/core';
-import Amplify, { Auth } from 'aws-amplify';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 export default function HeaderUserButtonMenu() {
@@ -17,7 +16,7 @@ export default function HeaderUserButtonMenu() {
 
   const signOut = async() => {
     try {
-      await Auth.signOut();
+      //await Auth.signOut();
     } catch(error) {
       console.log('error signing out ', error)
     }

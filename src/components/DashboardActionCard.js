@@ -11,7 +11,7 @@ import DashboardActionCardButton from '../components/DashboardActionCardButton'
 export default function DashboardActionCard() {
 
     return (
-        <Card>
+        <Card style={{height: '100%'}}>
             <CardHeader title="What would you like to do today?" />
             <Box mb={5}>
                 <DashboardActionCardButton icon={<CreditCardIcon />} subform='buy'/>

@@ -1,13 +1,94 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Box, Card, CardContent, CardHeader, List, ListItem, CardActions } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import SendIcon from '@material-ui/icons/Send';
+import {useEffect, useState} from "react";
+import axios from 'axios'
 
-export default function Contacts() {
-  return (
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
-<></>
+function makeName(firstName, lastName)
+{
+    let label
+    if (firstName){
+        label = firstName + ' '
+    }
+    if (lastName){
+        label = label + lastName + ' '
+    }
 
-  )
+    return label
 }
 
+export default function Contacts() {
 
+  const [contacts, setContacts] = useState([])
 
+  useEffect(() => {
+    axios
+      .get('http://www.telephant.co.za/contacts.json')
+      .then(response => {
+        setContacts(response.data.results)
+      })
+  }, [])
+
+    return (
+      <Box  p={2}>
+        <Grid container spacing={3}>
+          {contacts.map((contact, key) => {
+            return (
+              <Box m={1} minWidth={1/5}>
+              <Grid>
+              <Card>
+                  <CardContent>
+                      <CardHeader title={makeName(contact.firstName, contact.lastName)}/>
+                      <List>
+                          <ListItem>
+                              <ListItemIcon>
+                                  <PhoneIcon />
+                              </ListItemIcon>
+                              <ListItemText primary={contact.telephoneNumber} />
+                          </ListItem>
+                          <ListItem>
+                              <ListItemIcon>
+                                  <EmailIcon />
+                              </ListItemIcon>
+                              <ListItemText primary={contact.email} />
+                          </ListItem>
+                      </List>
+                      <CardActions>
+                          <Button variant="outlined" startIcon={<DeleteIcon />}>
+                              Delete
+                          </Button>
+                          <Button variant="outlined" startIcon={<EditIcon />}>
+                              Edit
+                          </Button>
+                      </CardActions>
+                      <CardActions>
+                          <Button variant="outlined" startIcon={<SendIcon />}>
+                              Send
+                          </Button>
+                      </CardActions>
+                  </CardContent>
+              </Card>
+          </Grid>
+          </Box>
+            );
+          })}
+        </Grid>
+      </Box>
+    );
+  };

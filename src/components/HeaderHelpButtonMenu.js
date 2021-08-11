@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, MenuItem, IconButton } from '@material-ui/core';
+import { Menu, MenuItem, IconButton, Link } from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 export default function HeaderHelpButtonMenu() {
@@ -26,7 +26,7 @@ export default function HeaderHelpButtonMenu() {
           open={Boolean(anchorEl)}
           onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Help Center</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} target='_blank' href='http://help.telephant.co.za'>Help Center</MenuItem>
         <MenuItem onClick={handleClose}>Video Explainer</MenuItem>
         <MenuItem onClick={handleClose}>About Telephant</MenuItem>
       </Menu>

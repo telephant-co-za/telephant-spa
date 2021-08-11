@@ -11,7 +11,7 @@ export class SubformUserAirtimeStep1 extends Component {
     const { values, handleChange } = this.props;
     return (
               <Card style={{height: '100%'}}>
-                <CardHeader title="Use Your Airtime" />
+                <CardHeader title="Use Airtime" />
                 <CardContent>
                   <form noValidate>
                     <Box mb={3}>

@@ -1,16 +1,16 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
+import React, { useContext, useState }  from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
+
+import { Redirect } from "react-router-dom";
+import { AuthContext } from '../auth/authContext';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,8 +23,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+const SignInPage = props => {
+  const context = useContext(AuthContext)
+  const [telephoneNumber, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
   const classes = useStyles();
+
+  const login = () => {
+    context.authenticate(telephoneNumber, password);
+  };
+
+  // Set 'from' to path where browser is redirected after a successful login.
+  // Either / or the protected path user tried to access.
+  const { from } = props.location.state || { from: { pathname: "/" } };
+
+  if (context.isAuthenticated === true) 
+        {
+            return <Redirect to={from} />;
+        }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -42,6 +59,7 @@ export default function SignIn() {
             name="telephoneNumber"
             autoComplete="telephoneNumber"
             autoFocus
+            onChange={e => {setUserName(e.target.value);}}
           />
           <TextField
             variant="outlined"
@@ -53,6 +71,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={e => {setPassword(e.target.value);}}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -64,6 +83,7 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={login}
           >
             Sign In
           </Button>
@@ -74,7 +94,7 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
@@ -85,3 +105,5 @@ export default function SignIn() {
     </Container>
   );
 }
+
+export default SignInPage;

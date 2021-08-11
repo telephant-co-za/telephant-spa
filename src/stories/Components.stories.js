@@ -19,8 +19,21 @@ import TransactionsViewPDF from '../components/TransactionsViewPDF'
 import TransactionDetail from '../components/TransactionDetail' 
 
 storiesOf("Components/Dashboard/AccountBalance", module)
-    .add("default", () => {
-            return <DashboardAccountBalance />;
+    .add("0", () => {
+            let balance = 0; 
+            return <DashboardAccountBalance balance={balance}/>;
+          })
+          .add("100", () => {
+            let balance = 100.00; 
+            return <DashboardAccountBalance balance={balance}/>;
+          })
+          .add("1000", () => {
+            let balance = 100.00; 
+            return <DashboardAccountBalance balance={balance}/>;
+          })
+          .add("million", () => {
+            let balance = 1000000.00; 
+            return <DashboardAccountBalance balance={balance}/>;
           })
 storiesOf("Components/Dashboard/ActionCard", module)
     .add("default", () => {
