@@ -1,7 +1,10 @@
 // Adapted from here:
 // https://www.carlrippon.com/react-drop-down-data-binding/
+// Implemented contacts contexts into this
 
 import React from 'react';
+import { useContext } from "react";
+import { ContactsContext } from "../contexts/ContactsContext";
 
 function MakeLabel(firstName, lastName, telephoneNumber)
 {
@@ -21,18 +24,19 @@ function ContactDropDown() {
     const [loading, setLoading] = React.useState(true);
     const [items, setItems] = React.useState([]);
     const [value, setValue] = React.useState("R2-D2");
+
+    const context = useContext(ContactsContext);
+    const { contacts } = context;
     
     React.useEffect(() => {
       let unmounted = false;
 
       async function getContacts() {
-        const response = await fetch(
-          "http://www.telephant.co.za/contacts.json"
-        );
-        const body = await response.json();
+
+        const body = contacts
         if (!unmounted) {
           setItems(
-            body.results.map(({ firstName, lastName, telephoneNumber }) => ({ label: MakeLabel(firstName, lastName, telephoneNumber), value: telephoneNumber }))
+            body.map(({ firstName, lastName, telephoneNumber }) => ({ label: MakeLabel(firstName, lastName, telephoneNumber), value: telephoneNumber }))
           );
           setLoading(false);
         }
@@ -41,7 +45,7 @@ function ContactDropDown() {
       return () => {
         unmounted = true;
       };
-    }, []);
+    }, [contacts]);
 
     const style = {
         border:0,

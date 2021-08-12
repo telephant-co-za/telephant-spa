@@ -1,9 +1,22 @@
 import React from 'react';
 import { CardHeader, CardContent, Card, Box, InputLabel, FormLabel, CardActions, Button, InputAdornment, Input } from '@material-ui/core';
 import ContactsDropDown from '../components/ContactsDropDown'
+import { useContext } from "react";
+import { BalanceContext } from "../contexts/BalanceContext";
+
+function formatZAR(value){
+  const currencyFormatter = new Intl.NumberFormat('en-ZA', {
+      style: 'currency',
+      currency: 'ZAR',
+    });
+  
+    return currencyFormatter.format(Number(value))
+  }
 
 export default function FormRequestAirtime() {
 
+  const context = useContext(BalanceContext);
+  const { balance } = context;
 
   return (
     <Card style={{height: '100%'}}>
@@ -12,7 +25,7 @@ export default function FormRequestAirtime() {
       <form noValidate>
         <Box mb={3}>
           <FormLabel>
-            You can send airtime credit to one of your contacts from this page.
+            You can send airtime credit to one of your contacts from this page.  You have {formatZAR(balance)} available.
           </FormLabel>
         </Box>
         <Box mb={3}>
