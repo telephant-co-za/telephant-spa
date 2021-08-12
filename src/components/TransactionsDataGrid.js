@@ -22,6 +22,9 @@ import WithdrawIcon from '@material-ui/icons/LocalAtm';
 import {useEffect, useState} from "react";
 import TransactionsDetail from './TransactionsDetail'
 
+import { useContext } from "react";
+import { TransactionsContext } from "../contexts/TransactionsContext";
+
 const currencyFormatter = new Intl.NumberFormat('en-ZA', {
   style: 'currency',
   currency: 'ZAR',
@@ -97,15 +100,9 @@ const columns = [
 
 export default function TransactionsDataGrid() {
 
-  const [rows, setRows] = useState([])
-
-  useEffect(() => {
-    axios
-      .get('http://www.telephant.co.za/transactions.json')
-      .then(response => {
-        setRows(response.data.results)
-      })
-  }, [])
+  const context = useContext(TransactionsContext);
+  const { transactions } = context;
+  const rows = transactions;
 
   const [open, setOpen] = React.useState(false);
   const [row, setData] = React.useState(false);

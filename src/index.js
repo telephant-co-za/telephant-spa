@@ -33,12 +33,16 @@ import Profile from './pages/Profile';
 //import AuthHeader from "../auth/delete/authHeader";
 //import AuthProvider from "../auth/authContext";
 import ContactsContextProvider from './contexts/ContactsContext'
+import BalanceContextProvider from './contexts/BalanceContext'
+import TransactionsContextProvider from './contexts/TransactionsContext'
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <ContactsContextProvider>
+        <BalanceContextProvider>
+        <TransactionsContextProvider>
             <Grid container>
               <Grid item xs={12}>
                 <Header />
@@ -58,6 +62,8 @@ const App = () => {
                 <Footer />
               </Grid>
             </Grid>
+          </TransactionsContextProvider>
+          </BalanceContextProvider>
           </ContactsContextProvider>
       </BrowserRouter>
     </ThemeProvider>

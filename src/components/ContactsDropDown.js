@@ -21,8 +21,10 @@ function ContactDropDown() {
     const [loading, setLoading] = React.useState(true);
     const [items, setItems] = React.useState([]);
     const [value, setValue] = React.useState("R2-D2");
+    
     React.useEffect(() => {
       let unmounted = false;
+
       async function getContacts() {
         const response = await fetch(
           "http://www.telephant.co.za/contacts.json"

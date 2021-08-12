@@ -7,23 +7,19 @@ export const getContacts = () => {
       .then(json => json);
   };
   
-  /* export const getMovie = id => {
+export const getBalance = () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      `http://www.telephant.co.za/balance.json`
     ).then(res => res.json());
   };
   
-  export const getGenres = () => {
+  export const getTransactions = () => {
     return fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-        process.env.REACT_APP_TMDB_KEY +
-        "&language=en-US"
-    )
-      .then(res => res.json())
-      .then(json => json.genres);
+      `http://www.telephant.co.za/transactions.json`
+    ).then(res => res.json());
   };
   
-  export const getMovieImages = (id) => {
+ /* export const getMovieImages = (id) => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
