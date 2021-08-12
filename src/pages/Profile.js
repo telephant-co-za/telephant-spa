@@ -1,14 +1,13 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Grid, Box } from '@material-ui/core';
 
-export default function Beneficiaries() {
-
+export default function Profile() {
 
   return (
+    <Box p={3}>
+    <Grid container spacing={3}>
 
-          <Typography component="h1" variant="h6" color="inherit">
-            Profile
-          </Typography>
-
+    </Grid>
+  </Box>
   );
 }

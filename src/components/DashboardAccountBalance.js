@@ -13,8 +13,6 @@ const currencyFormatter = new Intl.NumberFormat('en-ZA', {
   return currencyFormatter.format(Number(value))
 }
 
-
-
 export default function DashboardAccountBalance() {
 
     const context = useContext(BalanceContext);

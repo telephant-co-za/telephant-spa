@@ -6,11 +6,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import { Card, CardHeader, CardContent } from '@material-ui/core';
+import { Dialog, Card, CardHeader, CardContent } from '@material-ui/core';
 
 import { Redirect } from "react-router-dom";
-//import { AuthContext } from '../auth/authContext';
+import { AuthContext } from '../contexts/AuthenticationContext';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,30 +20,40 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  backDrop: {
+    backdropFilter: "blur(3px)",
+    backgroundColor:'rgba(0,0,30,0.4)'
+  },
 }));
 
 const SignInPage = props => {
-  //const context = useContext(AuthContext)
+  const context = useContext(AuthContext)
   const [telephoneNumber, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const classes = useStyles();
 
   const login = () => {
-    //context.authenticate(telephoneNumber, password);
+    context.authenticate(telephoneNumber, password);
   };
 
   // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
   const { from } = props.location.state || { from: { pathname: "/" } };
 
-  //if (context.isAuthenticated === true) 
+  if (context.isAuthenticated === true) 
         {
             return <Redirect to={from} />;
         }
 
   return (
-    <Container component="main" maxWidth="xs">
+  <Dialog
+          open={true}
+          BackdropProps={{
+            classes: {
+              root: classes.backDrop,
+            },
+          }}>
       <Card>
       <CardHeader title='Sign In'></CardHeader>
       <CardContent>
@@ -102,7 +111,7 @@ const SignInPage = props => {
         </form>
         </CardContent>
       </Card>
-    </Container>
+  </Dialog>
   );
 }
 

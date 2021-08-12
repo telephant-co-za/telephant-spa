@@ -10,7 +10,6 @@ import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 import SendIcon from '@material-ui/icons/Send';
 import { useContext } from "react";
-//import { getContacts } from "../api/api";
 import { ContactsContext } from "../contexts/ContactsContext";
 
 const useStyles = makeStyles((theme) => ({

@@ -19,10 +19,24 @@ export const getBalance = () => {
     ).then(res => res.json());
   };
   
- /* export const getMovieImages = (id) => {
-    return fetch(
-      `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => res.json())
-      .then((json) => json.posters);
-  }; */
+  export const login = async (username, password) => {
+    const res = await fetch('https://localhost:3443/v1/users?action=login', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ telephoneNumber: username, password: password })
+    })
+    return res.json();
+};
+
+export const signup = async (username, password) => {
+    const res = await fetch('https://localhost:3443/v1/users?action=signup', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ telephoneNumber: username, password: password })
+    })
+    return res.json();
+};

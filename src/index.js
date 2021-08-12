@@ -1,21 +1,4 @@
-/* import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './layouts/App';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-,document.getElementById('root')
-);
-
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"; */
-
-
-
-//----
-
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
@@ -28,17 +11,23 @@ import Transactions from './pages/Transactions';
 import Contacts from './pages/Contacts';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
-//import SignIn from '../pages/SignIn';
-//import NotFound from '../pages/NotFound'
-//import AuthHeader from "../auth/delete/authHeader";
-//import AuthProvider from "../auth/authContext";
+import SignIn from './pages/SignIn';
+import About from './pages/About'
+import Video from './pages/Video'
+import Terms from './pages/Terms'
+
 import ContactsContextProvider from './contexts/ContactsContext'
 import BalanceContextProvider from './contexts/BalanceContext'
 import TransactionsContextProvider from './contexts/TransactionsContext'
+import AuthContextProvider from './contexts/AuthenticationContext'
+import AuthContext from './contexts/AuthenticationContext'
+import PrivateRoute from './components/PrivateRoute'
 
 const App = () => {
+
   return (
     <ThemeProvider theme={theme}>
+     <AuthContextProvider>
       <BrowserRouter>
         <ContactsContextProvider>
         <BalanceContextProvider>
@@ -49,12 +38,49 @@ const App = () => {
               </Grid>
               <Grid item xs={12}>
                 <Switch>
-                  <Route path="/transactions" component={Transactions} />
-                  <Route exact path="/beneficiaries" component={Contacts} />
-                  <Route  exact path="/profile" component={Profile} />
-                  <Route path="/airtime" component={Dashboard} />
-                  {/*<Route path="/signin" component={SignIn} />*/}
-                  {/* <Route component={NotFound} /> */}
+
+                  {/* private */}                  
+                  <PrivateRoute exact path="/transactions">
+                      <Transactions />  
+                  </PrivateRoute>
+
+                  <PrivateRoute exact path="/contacts">
+                      <Contacts />
+                  </PrivateRoute>
+
+                  <PrivateRoute exact path="/profile">
+                      <Profile />
+                  </PrivateRoute>
+
+
+                      {/* public - Dashboard Sub Forms */}
+
+                      <PrivateRoute exact path="/airtime/use">
+                          <Dashboard subform="use"/>
+                      </PrivateRoute>
+          
+                      <PrivateRoute exact path="/airtime/send">
+                          <Dashboard subform="send"/>
+                      </PrivateRoute>
+
+                      <PrivateRoute exact path="/airtime/request">
+                          <Dashboard subform="request"/>
+                      </PrivateRoute>
+
+                      <PrivateRoute exact path="/airtime/buy">
+                          <Dashboard subform="buy"/>
+                      </PrivateRoute>
+
+                      <PrivateRoute exact path="/airtime">
+                          <Dashboard subform="use"/>
+                      </PrivateRoute>
+                  
+                  {/* public */}
+                  <Route path="/terms" component={Terms} />
+                  <Route path="/video" component={Video} />
+                  <Route path="/about" component={About} />
+                  <Route path="/signin" component={SignIn} />
+
                   <Redirect from="/" to="/airtime" />
                 </Switch>
               </Grid>
@@ -66,6 +92,7 @@ const App = () => {
           </BalanceContextProvider>
           </ContactsContextProvider>
       </BrowserRouter>
+      </AuthContextProvider>
     </ThemeProvider>
     );
   };
