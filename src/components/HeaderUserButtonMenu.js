@@ -50,11 +50,11 @@ export default function HeaderUserButtonMenu() {
     // Logged out, show a login and signup button
     return (
     <>
-      <Button color="primary" aria-label="upload picture" component="span" onClick={handleClick}>
-        Log In
+      <Button color="primary" aria-label="upload picture" component={Link} to="/signin" onClick={handleClick}>
+        Sign In
       </Button> 
-      <Button color="primary" aria-label="upload picture" component="span" onClick={handleClick}>
-        Sign Up
+      <Button color="primary" aria-label="upload picture" component={Link} to="/register" onClick={handleClick}>
+        Register
       </Button> 
     </>
     ); 

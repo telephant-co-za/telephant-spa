@@ -8,17 +8,13 @@ const PrivateRoute = props => {
   
   // Destructure props from <privateRoute> 
   const { component: Component, ...rest } = props;
-
-  console.log("----")
-  console.log(isAuthenticated)
-  console.log("-----")
   
   return isAuthenticated === true ? (
     <Route {...rest} render={props => <Component {...props} />} />
   ) : (
     <Redirect
       to={{
-        pathname: "/signin",
+        pathname: "/about",
         state: { from: props.location }
       }}
     />

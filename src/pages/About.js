@@ -1,45 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 export default function About() {
 
     return(
-<>
-        <h1>Igitur neque stultorum quisquam beatus neque sapientium non beatus.</h1>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ante Aristippus, et ille melius. Tu enim ista lenius, hic Stoicorum more nos vexat. Poterat autem inpune; Duo Reges: constructio interrete. Quid censes in Latino fore? <i>Negat esse eam, inquit, propter se expetendam.</i> </p>
-
-<h2>Idemne potest esse dies saepius, qui semel fuit?</h2>
-
-<p><a href='http://loripsum.net/' target='_blank'>Tecum optime, deinde etiam cum mediocri amico.</a> Istam voluptatem, inquit, Epicurus ignorat? Nemo igitur esse beatus potest. Quibusnam praeteritis? Quid vero? <i>Hic ambiguo ludimur.</i> </p>
-
-<blockquote cite='http://loripsum.net'>
-	Habebat tamen rationem valitudinis: utebatur iis exercitationibus, ut ad cenam et sitiens et esuriens veniret, eo cibo, qui et suavissimus esset et idem facillimus ad concoquendum, vino et ad voluptatem et ne noceret.
-</blockquote>
-
-
-<ol>
-	<li>Animum autem reliquis rebus ita perfecit, ut corpus;</li>
-	<li>Quae quo sunt excelsiores, eo dant clariora indicia naturae.</li>
-	<li>Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum.</li>
-	<li>Si quidem, inquit, tollerem, sed relinquo.</li>
-</ol>
+	<>
+    <Card>
+        <CardMedia
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+		  	Context
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+		  In South Africa, between 20 and 22 million individuals use smartphones, accounting for roughly one-third of the population. However, with more than 90 million mobile connections, the aggregate number of connections is substantially larger, as dual SIM phones are popular and widely utilized in the country and across the continent. A significant proportion of users are using the prepaid model to access voice and data services. The prepaid model is colloquially known as pay-as-you-go. As adoption of mobile phones and data apps have increased revenues have reflected the growth. Prepaid mobile data income has expanded rapidly in South Africa, more than tripling from 2015 to 2020, reaching around 2.1 billion US dollars in 2020, and surpassing prepaid mobile voice revenue for the first time during this period.
+          </Typography>
+        </CardContent>
+	</Card>
+	</>
 
 
-<ul>
-	<li>Ille igitur vidit, non modo quot fuissent adhuc philosophorum de summo bono, sed quot omnino esse possent sententiae.</li>
-	<li>In his igitur partibus duabus nihil erat, quod Zeno commutare gestiret.</li>
-	<li>Quem Tiberina descensio festo illo die tanto gaudio affecit, quanto L.</li>
-	<li>Sextilio Rufo, cum is rem ad amicos ita deferret, se esse heredem Q.</li>
-	<li>Nam, ut saepe iam dixi, in infirma aetate inbecillaque mente vis naturae quasi per caliginem cernitur;</li>
-</ul>
 
 
-<p>Suo enim quisque studio maxime ducitur. Sed fortuna fortis; </p>
-
-<p>Is es profecto tu. Bona autem corporis huic sunt, quod posterius posui, similiora. Istic sum, inquit. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Quid sequatur, quid repugnet, vident. <mark>Iam in altera philosophiae parte.</mark> </p>
-</>
-
-    
-    );
+	);
 
 }

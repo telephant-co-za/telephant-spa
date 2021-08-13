@@ -11,6 +11,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import SendIcon from '@material-ui/icons/Send';
 import { useContext } from "react";
 import { ContactsContext } from "../contexts/ContactsContext";
+import Draggable from 'react-draggable';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +44,7 @@ const Contacts = (props) => {
         <Grid container spacing={3}>
           {contacts.map((contact, key) => {
             return (
+            <Draggable bounds="parent">
               <Box m={1} minWidth={1/5}>
               <Grid>
               <Card>
@@ -79,6 +81,7 @@ const Contacts = (props) => {
               </Card>
           </Grid>
           </Box>
+        </Draggable>
             );
           })}
         </Grid>

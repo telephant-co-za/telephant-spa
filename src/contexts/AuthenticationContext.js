@@ -16,18 +16,21 @@ const AuthContextProvider = (props) => {
   }
 
   const authenticate = async (username, password) => {
-    //const result = await login(username, password);
+    //const result = login(username, password);
 
-    const result = {
+  const result = {
       "message": "User successfully logged in.",
       "token": "BEARER eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4"
   }
-
 
     if (result.token) {
       setToken(result.token)
       setIsAuthenticated(true);
       setUserName(username);
+    }
+    else
+    {
+      console.log(result)
     }
   };
 

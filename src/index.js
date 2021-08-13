@@ -15,12 +15,12 @@ import SignIn from './pages/SignIn';
 import About from './pages/About'
 import Video from './pages/Video'
 import Terms from './pages/Terms'
+import Register from './pages/Register'
 
 import ContactsContextProvider from './contexts/ContactsContext'
 import BalanceContextProvider from './contexts/BalanceContext'
 import TransactionsContextProvider from './contexts/TransactionsContext'
 import AuthContextProvider from './contexts/AuthenticationContext'
-import AuthContext from './contexts/AuthenticationContext'
 import PrivateRoute from './components/PrivateRoute'
 
 const App = () => {
@@ -80,6 +80,7 @@ const App = () => {
                   <Route path="/video" component={Video} />
                   <Route path="/about" component={About} />
                   <Route path="/signin" component={SignIn} />
+                  <Route path="/register" component={Register} />
 
                   <Redirect from="/" to="/airtime" />
                 </Switch>

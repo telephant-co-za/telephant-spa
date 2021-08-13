@@ -1,8 +1,6 @@
 import React, { useContext, useState }  from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,23 +24,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignInPage = props => {
+const SignUpPage = props => {
   const context = useContext(AuthContext)
-  // eslint-disable-next-line no-empty-pattern
-  const { } = context;
   const [telephoneNumber, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const classes = useStyles();
 
-  const login = () => {
-    console.log("Authenticating...")
-    context.authenticate(telephoneNumber, password);
+  const signup = () => {
+    context.register(telephoneNumber, password);
   };
 
   // Set 'from' to path where browser is redirected after a successful login.
-  // Either / or the protected path user tried to access.
-  const { from } = props.location.state || { from: { pathname: "/airtime" } };
+  const { from } = { from: { pathname: "/airtime" } };
 
   if (context.isAuthenticated === true) 
         {
@@ -58,7 +52,7 @@ const SignInPage = props => {
             },
           }}>
       <Card>
-      <CardHeader title='Sign In'></CardHeader>
+      <CardHeader title='Register'></CardHeader>
       <CardContent>
         <form className={classes.form} noValidate>
           <TextField
@@ -85,9 +79,17 @@ const SignInPage = props => {
             autoComplete="current-password"
             onChange={e => {setPassword(e.target.value);}}
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Confirm Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            //onChange={e => {setPassword(e.target.value);}}
           />
           <Button
             type="submit"
@@ -95,9 +97,9 @@ const SignInPage = props => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={login}
+            onClick={signup}
           >
-            Sign In
+            Register
           </Button>
           <Grid container>
             <Grid item xs>
@@ -106,8 +108,8 @@ const SignInPage = props => {
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/register" variant="body2">
-                {"Don't have an account? Sign Up"}
+              <Link to="/signin" variant="body2">
+                {"Already have an account? Sign In"}
               </Link>
             </Grid>
           </Grid>
@@ -118,4 +120,4 @@ const SignInPage = props => {
   );
 }
 
-export default SignInPage;
+export default SignUpPage;
