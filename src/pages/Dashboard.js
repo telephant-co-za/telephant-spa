@@ -7,6 +7,9 @@ import FormSendAirtime from '../forms/FormSendAirtime';
 import FormRequestAirtime from '../forms/FormRequestAirtime';
 import DashboardAccountBalance from '../components/DashboardAccountBalance';
 import DashboardActionCard from '../components/DashboardActionCard';
+import DashboardBarChart from '../components/DashboardLineChart';
+import DashboardLineChart from '../components/DashboardBarChart';
+import { sizing } from '@material-ui/system';
 
 const SubForm = (props) => {
   return (
@@ -21,6 +24,14 @@ export default function Dashboard(props) {
 
   return (
     <Box p={3}>
+    <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <DashboardBarChart />
+        </Grid>
+        <Grid item xs={6}>
+          <DashboardLineChart />
+        </Grid>
+    </Grid>
     <Grid container spacing={3}>
       <Grid item xs={4}>
         <DashboardAccountBalance /> 

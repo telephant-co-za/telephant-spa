@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import Typography from '@material-ui/core/Typography';
-import axios from 'axios'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
@@ -19,7 +18,6 @@ import SendIcon from '@material-ui/icons/Send';
 import ReceiveIcon from '@material-ui/icons/CallReceived'
 import DefaultIcon from '@material-ui/icons/Help'  // Shouldn't show
 import WithdrawIcon from '@material-ui/icons/LocalAtm';
-import {useEffect, useState} from "react";
 import TransactionsDetail from './TransactionsDetail'
 
 import { useContext } from "react";
@@ -132,7 +130,6 @@ export default function TransactionsDataGrid() {
           onRowClick={(params, event) => {
             let row = params.row;
             handleClickOpen(row)
-            console.log(row.amount)
           
           }}
           />
