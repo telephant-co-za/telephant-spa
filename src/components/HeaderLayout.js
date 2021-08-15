@@ -1,9 +1,9 @@
 import * as React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
-import HeaderLogo from "../components/HeaderLogo";
-import HeaderTabs from "../components/HeaderTabs";
-import HeaderUserButtonGroup from "../components/HeaderUserButtonGroup";
+import HeaderLogo from "./HeaderLogo";
+import HeaderTabs from "./HeaderTabs";
+import HeaderUserButtonGroup from "./HeaderUserButtonGroup";
 
 const LayoutHeader = (props) => {
   return (

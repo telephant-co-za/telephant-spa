@@ -5,11 +5,11 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import ReactDOM from "react-dom";
 
 // Theme
-import theme from "./components/LayoutTheme";
+import theme from "./components/Theme";
 
 // Layout
-import LayoutHeader from "./components/LayoutHeader";
-import LayoutFooter from "./components/LayoutFooter";
+import HeaderLayout from "./components/HeaderLayout";
+import FooterLayout from "./components/FooterLayout";
 
 // Pages
 import Transactions from "./components/PageTransactions";
@@ -38,7 +38,7 @@ const App = () => {
               <TransactionsContextProvider>
                 <Grid container>
                   <Grid item xs={12}>
-                    <LayoutHeader />
+                    <HeaderLayout />
                   </Grid>
                   <Grid item xs={12}>
                     <Switch>
@@ -103,7 +103,7 @@ const App = () => {
                     </Switch>
                   </Grid>
                   <Grid item xs={12}>
-                    <LayoutFooter />
+                    <FooterLayout />
                   </Grid>
                 </Grid>
               </TransactionsContextProvider>

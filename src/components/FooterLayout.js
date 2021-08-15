@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, CssBaseline } from "@material-ui/core";
 
 // Custom
-import FooterSocialLinks from "../components/FooterSocialLinks";
-import FooterCopyrightNotice from "../components/FooterCopyrightNotice";
+import FooterSocialLinks from "./FooterSocialLinks";
+import FooterCopyrightNotice from "./FooterCopyrightNotice";
 
 // Make styles
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // THE COMPONENT
-export default function LayoutFooter() {
+export default function FooterLayout() {
   const classes = useStyles();
 
   // Main stuff
