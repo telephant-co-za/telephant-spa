@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpPage = props => {
+const Register = props => {
   const context = useContext(AuthContext)
   const [telephoneNumber, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -103,12 +103,12 @@ const SignUpPage = props => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link to="#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/signin" variant="body2">
+              <Link to="signin" variant="body2">
                 {"Already have an account? Sign In"}
               </Link>
             </Grid>
@@ -120,4 +120,4 @@ const SignUpPage = props => {
   );
 }
 
-export default SignUpPage;
+export default Register;

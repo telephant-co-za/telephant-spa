@@ -38,7 +38,7 @@ export default function HeaderUserButtonMenu() {
         onClick={handleClose}
       >
         
-        <MenuItem component={Link} to="/profile" onClick={handleClose}>My Account</MenuItem>
+        <MenuItem component={Link} to="profile" onClick={handleClose}>My Account</MenuItem>
         <MenuItem onClick={clickSignOut}>Sign Out</MenuItem>
           
       </Menu>
@@ -50,10 +50,10 @@ export default function HeaderUserButtonMenu() {
     // Logged out, show a login and signup button
     return (
     <>
-      <Button color="primary" aria-label="upload picture" component={Link} to="/signin" onClick={handleClick}>
+      <Button color="primary" aria-label="upload picture" component={Link} to="signin">
         Sign In
       </Button> 
-      <Button color="primary" aria-label="upload picture" component={Link} to="/register" onClick={handleClick}>
+      <Button color="primary" aria-label="upload picture" component={Link} to="register">
         Register
       </Button> 
     </>

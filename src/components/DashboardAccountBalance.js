@@ -27,7 +27,7 @@ export default function DashboardAccountBalance() {
             </CardContent>
             <CardActions style={{ justifyContent: 'center' }}>
                 <Box mt={3}>
-                    <Button variant="contained" color="primary" component={RouterLink} to="/transactions">
+                    <Button variant="contained" color="primary" component={RouterLink} to="transactions">
                         Transactions...
                     </Button>
                 </Box>

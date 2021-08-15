@@ -8,7 +8,6 @@ export default function HeaderHelpButtonMenu() {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log(event.currentTarget);
   };
 
   const handleClose = () => {
@@ -27,10 +26,10 @@ export default function HeaderHelpButtonMenu() {
           open={Boolean(anchorEl)}
           onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} component={Link} target='_blank' href='http://help.telephant.co.za'>Help Center</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/video'><Link href='/video'></Link>Video Explainer</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/about'>About Telephant</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/terms'>Terms</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} target='_blank' to='http://help.telephant.co.za'>Help Center</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='video'>Video Explainer</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='about'>About Telephant</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='terms'>Terms</MenuItem>
       </Menu>
     </>
   );

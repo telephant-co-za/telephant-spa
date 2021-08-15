@@ -74,7 +74,7 @@ export default function NotificationsList(props) {
 
           return (
             notifications.map((notification, key) => { return (
-              <ListItem>
+              <ListItem key={key}>
                 <ListItemAvatar>
                     {ReadOrNot(notification.read)}
                 </ListItemAvatar>

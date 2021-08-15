@@ -43,9 +43,9 @@ const HeaderTabs = (props) => {
           textColor="primary"
           centered  
         >
-          <Tab icon={<InfoIcon />} label="About" component={Link} to="/about" />
-          <Tab icon={<OndemandVideoIcon />} label="Video Explainer" component={Link} to="/video" />
-          <Tab icon={<FindInPageIcon />} label="Terms" component={Link} to="/terms" />
+          <Tab icon={<InfoIcon />} label="About" component={Link} to="about" />
+          <Tab icon={<OndemandVideoIcon />} label="Video Explainer" component={Link} to="video" />
+          <Tab icon={<FindInPageIcon />} label="Terms" component={Link} to="terms" />
         </Tabs>
       </Paper>
   )}

@@ -17,7 +17,7 @@ export default function HeaderUserButtonGroup() {
             disableRipple 
             disableFocusRipple>
                   <HeaderHelpButtonMenu />
-                  { isAuthenticated ? <HeaderNotifcationsButtonMenu /> : <></> }
+                  { isAuthenticated ? <HeaderNotifcationsButtonMenu /> : null }
                   <HeaderUserButtonMenu />
       </ButtonGroup>
     </div>

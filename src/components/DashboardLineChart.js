@@ -88,7 +88,6 @@ const trans = [
 ]
 
     let LineChartData = LineChartPrep(trans) 
-    console.log(LineChartData)
 
     var config = 
       {

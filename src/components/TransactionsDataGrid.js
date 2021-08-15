@@ -93,10 +93,10 @@ const zarDateTime = {
 };
 
 const columns = [
-{ field: 'id',            headerName: 'Action', renderCell: (params) => (Icon(params.getValue(params.id, 'type'))), flex: 1},
+{ field: 'id',            headerName: 'Action', renderCell: (params) => (Icon(params.getValue(params.id, 'type'))), flex: 0.6},
 { field: "accountID",     hide: true},
 { field: 'type',          hide: true},
-{ field: "transactionID", flex: 0.8},
+{ field: "transactionID", flex: 1, headerName: 'Transaction ID'},
 { field: "dateTime",      headerName: 'Date Time', ...zarDateTime, flex: 0.8},
 { field: "amount",        headerName: 'Amount', ...zarPrice, flex: 0.6},
 { field: "description",   headerName: 'Description', flex: 1}

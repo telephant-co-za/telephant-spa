@@ -53,7 +53,7 @@ export default function HeaderNotificationsButtonMenu() {
           <MenuItem>
             <List>
               <ListItem>
-                  <Grid container justify="flex-end" width="100%">
+                  <Grid container style={{ justifyContent: 'right' }} width="100%">
                     <HighlightOffIcon onClick={handleClose} edge='end'/>
                   </Grid>
               </ListItem>
