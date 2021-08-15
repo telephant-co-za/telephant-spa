@@ -36,7 +36,6 @@ const SignInPage = props => {
   const classes = useStyles();
 
   const login = () => {
-    console.log("Authenticating...")
     context.authenticate(telephoneNumber, password);
   };
 

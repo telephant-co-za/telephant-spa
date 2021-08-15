@@ -4,13 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
 // Note rename Icons to make easier to match to Actions
 import BuyIcon from '@material-ui/icons/CreditCard';
 import UseIcon from '@material-ui/icons/PhoneInTalk';
@@ -18,9 +11,9 @@ import SendIcon from '@material-ui/icons/Send';
 import ReceiveIcon from '@material-ui/icons/CallReceived'
 import DefaultIcon from '@material-ui/icons/Help'  // Shouldn't show
 import TopupIcon from '@material-ui/icons/LocalAtm';
-import TransactionsDetail from './TransactionsDetail'
 import TaxIcon from '@material-ui/icons/AccountBalance';
 import FeeIcon from '@material-ui/icons/AttachMoney';
+import { useHistory } from "react-router-dom";
 
 import { useContext } from "react";
 import { TransactionsContext } from "../contexts/TransactionsContext";
@@ -105,20 +98,15 @@ const columns = [
 export default function TransactionsDataGrid() {
 
   const context = useContext(TransactionsContext);
+  const history = useHistory();
+
+  const handleRoute = (row) =>{ 
+    const path = '/transactions/'+row.transactionID
+    history.push(path);
+  }
+  
   const { transactions } = context;
   const rows = transactions;
-
-  const [open, setOpen] = React.useState(false);
-  const [row, setData] = React.useState(false);
-
-  const handleClickOpen = (params) => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setData(row);
-  };
 
   return (
   <>
@@ -135,30 +123,12 @@ export default function TransactionsDataGrid() {
           rowsPerPageOptions={[5, 10, 20]} 
           onRowClick={(params, event) => {
             let row = params.row;
-            handleClickOpen(row)
+            handleRoute(row)
           
           }}
           />
       </CardContent>
     </Card>
-    <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-        <DialogTitle id="alert-dialog-title">Transaction Details</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <TransactionsDetail data={row}/>
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary" autoFocus>
-            Done
-          </Button>
-        </DialogActions>  
-    </Dialog>
   </>
   );
 };

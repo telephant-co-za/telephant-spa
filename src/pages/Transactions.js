@@ -1,9 +1,12 @@
+/* eslint-disable default-case */
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 
 import TransactionsActionCard from '../components/TransactionsActionCard'
 import TransactionsDataGrid from '../components/TransactionsDataGrid'
 import TransactionsViewPDF from '../components/TransactionsViewPDF'
+import TransactionsDetail from '../components/TransactionDetail'
+import TransactionsViewDetailPDF from '../components/TransactionsViewDetailPDF'
 
 const SubView = (props) => {
   return (
@@ -16,8 +19,6 @@ const SubView = (props) => {
 
 
 export default function Transactions(props) {
-
-  console.log(props.subview)
 
   return (
         <Box p={3}>
@@ -32,8 +33,11 @@ export default function Transactions(props) {
               <Grid item xs={12} md={9}>
                         {(() => {
                   switch (props.subview) {
-                    case "pdf":   return <SubView render={() => <TransactionsViewPDF />} />;
-                    default:      return <SubView render={() => <TransactionsDataGrid />} />;
+                    case "detail":    return <SubView render={() => <TransactionsDetail />} />;
+                    case "pdf":       return <SubView render={() => <TransactionsViewPDF />} />;
+                    case "pdf-detail":return <SubView render={() => <TransactionsViewDetailPDF />} />;
+                    case "datagrid":  return <SubView render={() => <TransactionsDataGrid />} />;
+                  
                   }
                 })()}    
               </Grid>

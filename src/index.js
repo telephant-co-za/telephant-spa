@@ -40,15 +40,21 @@ const App = () => {
               <Grid item xs={12}>
                 <Switch>
 
-                  {/* private */}                  
+                  {/* private */} 
 
-                  <PrivateRoute exact path="/transactions/pdf">
-                      <Transactions subview="pdf" />  
-                  </PrivateRoute>
+                       {/* transactions */}                
 
-                  <PrivateRoute exact path="/transactions">
-                      <Transactions subview="datagrid" />  
-                  </PrivateRoute>
+                            <PrivateRoute exact path="/transactions/pdf">
+                                <Transactions subview="pdf" />  
+                            </PrivateRoute>
+
+                            <PrivateRoute exact path="/transactions">
+                                <Transactions subview="datagrid" />  
+                            </PrivateRoute>
+
+                            <PrivateRoute exact path="/transactions/:id">
+                                <Transactions subview="detail" />  
+                            </PrivateRoute>
 
                   <PrivateRoute exact path="/contacts">
                       <Contacts />
