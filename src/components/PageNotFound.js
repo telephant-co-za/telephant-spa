@@ -1,6 +1,6 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { Grid, Typography } from '@material-ui/core';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { Grid, Typography } from "@material-ui/core";
 
 function NotFound() {
   const [redirectToHome, setRedirectToHome] = React.useState(false);

@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardContent,
   Typography,
-  Box
+  Box,
 } from "@material-ui/core";
 
 const transaction = {
@@ -41,7 +41,9 @@ const transaction = {
 
 const rows = transaction.lines.map((item, index) => (
   <>
-    <TableRow  style ={ index % 2? { background : "white" }:{ background : "#eee" }}>
+    <TableRow
+      style={index % 2 ? { background: "white" } : { background: "#eee" }}
+    >
       <TableCell>{item.type}</TableCell>
       <TableCell>{item.description}</TableCell>
       <TableCell>{formatZAR(item.amount)}</TableCell>
@@ -78,38 +80,46 @@ function parseISOString(s) {
 
 const TransactionDetail = (props) => {
   return (
-    <Box width={1/2}>
-    <Card>
-      <CardHeader title="Transaction Detail" />
-      <CardContent>
-        <Table width={1/2}>
-          <TableBody>
-            <TableRow>
-              <TableCell variant="head">Transaction ID</TableCell>
-              <TableCell>
-                <b>{transaction.header.transactionID}</b>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell variant="head">Date Time</TableCell>
-              <TableCell>{zarDateTime(transaction.header.dateTime)}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        <Box pt={5}>
-        <Typography variant="h6">Transaction Lines</Typography>
-        <Table>
-          <TableBody>
-            {rows}
-            <TableRow>
-              <TableCell variant="head"  colSpan={2}><Typography variant="h6">Total</Typography></TableCell>
-              <TableCell><Typography variant="h6">{formatZAR(transaction.header.total)}</Typography></TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        </Box>
-      </CardContent>
-    </Card>
+    <Box width={1 / 2}>
+      <Card>
+        <CardHeader title="Transaction Detail" />
+        <CardContent>
+          <Table width={1 / 2}>
+            <TableBody>
+              <TableRow>
+                <TableCell variant="head">Transaction ID</TableCell>
+                <TableCell>
+                  <b>{transaction.header.transactionID}</b>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell variant="head">Date Time</TableCell>
+                <TableCell>
+                  {zarDateTime(transaction.header.dateTime)}
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <Box pt={5}>
+            <Typography variant="h6">Transaction Lines</Typography>
+            <Table>
+              <TableBody>
+                {rows}
+                <TableRow>
+                  <TableCell variant="head" colSpan={2}>
+                    <Typography variant="h6">Total</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="h6">
+                      {formatZAR(transaction.header.total)}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Box>
+        </CardContent>
+      </Card>
     </Box>
   );
 };

@@ -4,20 +4,19 @@ import { getContacts } from "../api/api";
 export const ContactsContext = React.createContext(null);
 
 const ContactsContextProvider = (props) => {
-
-const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    getContacts().then(response => {
-    setContacts(response.results);
+    getContacts().then((response) => {
+      setContacts(response.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+  }, []);
 
   return (
     <ContactsContext.Provider
       value={{
-        contacts: contacts
+        contacts: contacts,
       }}
     >
       {props.children}

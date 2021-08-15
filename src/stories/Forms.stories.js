@@ -1,14 +1,8 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React from "react";
+import { storiesOf } from "@storybook/react";
 
-import FormUseAirtime from '../forms/FormUseAirtime';
+import FormUseAirtime from "../forms/FormUseAirtime";
 
-
-storiesOf("Forms/FormUseAirtime", module)
-    .add("default", () => {
-            return <FormUseAirtime />;
-          })
-
-
-
-
+storiesOf("Forms/FormUseAirtime", module).add("default", () => {
+  return <FormUseAirtime />;
+});

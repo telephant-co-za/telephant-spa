@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { Menu, MenuItem, IconButton, Button } from '@material-ui/core';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import {AuthContext} from '../contexts/AuthenticationContext'
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Menu, MenuItem, IconButton, Button } from "@material-ui/core";
+import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
+import { AuthContext } from "../contexts/AuthenticationContext";
+import { Link } from "react-router-dom";
 
 export default function HeaderUserButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,45 +18,58 @@ export default function HeaderUserButtonMenu() {
     setAnchorEl(null);
   };
 
-  function clickSignOut(){
-      signout();
-      handleClose();
-  };
+  function clickSignOut() {
+    signout();
+    handleClose();
+  }
 
   if (isAuthenticated) {
-  // Logged in... show this menu
-  return (
-    <>
-        <IconButton color="primary" aria-label="upload picture" component="span" onClick={handleClick}>
-            <AccountCircleOutlinedIcon />
+    // Logged in... show this menu
+    return (
+      <>
+        <IconButton
+          color="primary"
+          aria-label="upload picture"
+          component="span"
+          onClick={handleClick}
+        >
+          <AccountCircleOutlinedIcon />
         </IconButton>
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClick={handleClose}
-      >
-        
-        <MenuItem component={Link} to="profile" onClick={handleClose}>My Account</MenuItem>
-        <MenuItem onClick={clickSignOut}>Sign Out</MenuItem>
-          
-      </Menu>
-    </>
-  );
-  }
-  else
-  {
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClick={handleClose}
+        >
+          <MenuItem component={Link} to="profile" onClick={handleClose}>
+            My Account
+          </MenuItem>
+          <MenuItem onClick={clickSignOut}>Sign Out</MenuItem>
+        </Menu>
+      </>
+    );
+  } else {
     // Logged out, show a login and signup button
     return (
-    <>
-      <Button color="primary" aria-label="upload picture" component={Link} to="signin">
-        Sign In
-      </Button> 
-      <Button color="primary" aria-label="upload picture" component={Link} to="register">
-        Register
-      </Button> 
-    </>
-    ); 
+      <>
+        <Button
+          color="primary"
+          aria-label="upload picture"
+          component={Link}
+          to="signin"
+        >
+          Sign In
+        </Button>
+        <Button
+          color="primary"
+          aria-label="upload picture"
+          component={Link}
+          to="register"
+        >
+          Register
+        </Button>
+      </>
+    );
   }
 }
