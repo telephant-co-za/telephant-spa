@@ -8,6 +8,7 @@ import theme from './layouts/Theme'
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import Transactions from './pages/Transactions';
+//import TransactionsViewPDF from './components/TransactionsViewPDF';
 import Contacts from './pages/Contacts';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
@@ -40,8 +41,13 @@ const App = () => {
                 <Switch>
 
                   {/* private */}                  
+
+                  <PrivateRoute exact path="/transactions/pdf">
+                      <Transactions subview="pdf" />  
+                  </PrivateRoute>
+
                   <PrivateRoute exact path="/transactions">
-                      <Transactions />  
+                      <Transactions subview="datagrid" />  
                   </PrivateRoute>
 
                   <PrivateRoute exact path="/contacts">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardContent, CardActions, Fab } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 import MailIcon from '@material-ui/icons/MailOutline';
 import PdfIcon from '@material-ui/icons/PictureAsPdf';
@@ -22,7 +23,7 @@ function csvBuilder() {
 //onClick={() => { downloadPDF();
 
 export default function TransactionsActionCard(props) {
-    const link = `${window.location.href}/pdf`
+
     return (
         <Card>
             <CardHeader title="Export Options"  align="center" />
@@ -34,7 +35,7 @@ export default function TransactionsActionCard(props) {
                     </Fab>
                 </CardActions >
                 <CardActions style={{ justifyContent: 'center' }}>
-                    <Fab variant="extended" color="primary" style={{ width: '200px' }} href={link}>
+                    <Fab variant="extended" color="primary" style={{ width: '200px' }} component={Link} to="/transactions/pdf">
                         <PdfIcon />
                         View PDF
                     </Fab>
