@@ -12,7 +12,7 @@ const SubView = (props) => {
   return <>{props.render()}</>;
 };
 
-export default function Transactions(props) {
+export default function PageTransactions(props) {
   return (
     <Box p={3}>
       <Grid container spacing={3}>

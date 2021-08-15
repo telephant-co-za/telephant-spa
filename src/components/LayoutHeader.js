@@ -5,7 +5,7 @@ import HeaderLogo from "../components/HeaderLogo";
 import HeaderTabs from "../components/HeaderTabs";
 import HeaderUserButtonGroup from "../components/HeaderUserButtonGroup";
 
-const Header = (props) => {
+const LayoutHeader = (props) => {
   return (
     <>
       <AppBar elevation={4} style={{ background: "#FFFFFF" }} position="fixed">
@@ -23,4 +23,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default LayoutHeader;

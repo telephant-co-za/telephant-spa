@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignInPage = (props) => {
+const PageSignInPage = (props) => {
   const context = useContext(AuthContext);
   // eslint-disable-next-line no-empty-pattern
   const {} = context;
@@ -120,4 +120,4 @@ const SignInPage = (props) => {
   );
 };
 
-export default SignInPage;
+export default PageSignInPage;

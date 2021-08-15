@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Register = (props) => {
+const PageRegister = (props) => {
   const context = useContext(AuthContext);
   const [telephoneNumber, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -123,4 +123,4 @@ const Register = (props) => {
   );
 };
 
-export default Register;
+export default PageRegister;

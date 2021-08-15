@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
 import { BarChartPrep, Labels } from "../functions/BarChartPrep";
 
-export default function DashboardBarChart(props) {
+export default function DashboardChartBar(props) {
   const values = BarChartPrep();
   const labels = Labels();
 

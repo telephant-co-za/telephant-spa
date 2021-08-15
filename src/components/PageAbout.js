@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
 
-export default function About() {
+export default function PageAbout() {
   return (
     <>
       <Card>

@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { Grid, Typography } from "@material-ui/core";
 
-function NotFound() {
+function PageNotFound() {
   const [redirectToHome, setRedirectToHome] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,4 +25,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default PageNotFound;

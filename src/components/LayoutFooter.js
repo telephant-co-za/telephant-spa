@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // THE COMPONENT
-export default function Footer() {
+export default function LayoutFooter() {
   const classes = useStyles();
 
   // Main stuff

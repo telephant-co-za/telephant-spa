@@ -33,7 +33,7 @@ function makeName(firstName, lastName) {
   return label;
 }
 
-const Contacts = (props) => {
+const PageContacts = (props) => {
   const context = useContext(ContactsContext);
   const { contacts } = context;
 
@@ -89,4 +89,4 @@ const Contacts = (props) => {
   );
 };
 
-export default Contacts;
+export default PageContacts;

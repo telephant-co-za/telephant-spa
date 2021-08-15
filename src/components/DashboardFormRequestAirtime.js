@@ -11,7 +11,7 @@ import {
   InputAdornment,
   Input,
 } from "@material-ui/core";
-import ContactsDropDown from "../components/DropDownContacts";
+import WidgetDropDownContact from "../components/WidgetDropDownContact";
 
 export default function DashboardFormRequestAirtime() {
   return (
@@ -45,7 +45,7 @@ export default function DashboardFormRequestAirtime() {
               From who?
             </InputLabel>
             <br />
-            <ContactsDropDown />
+            <WidgetDropDownContact />
           </Box>
           <Box mt={3}>
             <CardActions style={{ justifyContent: "center" }}>

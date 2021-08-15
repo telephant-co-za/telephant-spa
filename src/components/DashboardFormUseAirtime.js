@@ -23,7 +23,7 @@ function formatZAR(value) {
   return currencyFormatter.format(Number(value));
 }
 
-export default function DashboardFormRequestAirtime() {
+export default function DashboardFormUseAirtime() {
   const context = useContext(BalanceContext);
   const { balance } = context;
 

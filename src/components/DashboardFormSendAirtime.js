@@ -11,7 +11,7 @@ import {
   InputAdornment,
   Input,
 } from "@material-ui/core";
-import ContactsDropDown from "../components/DropDownContacts";
+import ContactsDropDown from "./WidgetDropDownContact";
 import { useContext } from "react";
 import { BalanceContext } from "../contexts/BalanceContext";
 
@@ -24,7 +24,7 @@ function formatZAR(value) {
   return currencyFormatter.format(Number(value));
 }
 
-export default function DashboardFormRequestAirtime() {
+export default function DashboardFormSendAirtime() {
   const context = useContext(BalanceContext);
   const { balance } = context;
 

@@ -7,7 +7,7 @@ import {
   FormLabel,
 } from "@material-ui/core";
 
-export default function DashboardFormRequestAirtime() {
+export default function DashboardFormBuyAirtime() {
   return (
     <Card style={{ height: "100%" }}>
       <CardHeader title="Buy Airtime" />

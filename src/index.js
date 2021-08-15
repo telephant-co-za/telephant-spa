@@ -8,8 +8,8 @@ import ReactDOM from "react-dom";
 import theme from "./components/LayoutTheme";
 
 // Layout
-import Header from "./components/LayoutHeader";
-import Footer from "./components/LayoutFooter";
+import LayoutHeader from "./components/LayoutHeader";
+import LayoutFooter from "./components/LayoutFooter";
 
 // Pages
 import Transactions from "./components/PageTransactions";
@@ -38,7 +38,7 @@ const App = () => {
               <TransactionsContextProvider>
                 <Grid container>
                   <Grid item xs={12}>
-                    <Header />
+                    <LayoutHeader />
                   </Grid>
                   <Grid item xs={12}>
                     <Switch>
@@ -103,7 +103,7 @@ const App = () => {
                     </Switch>
                   </Grid>
                   <Grid item xs={12}>
-                    <Footer />
+                    <LayoutFooter />
                   </Grid>
                 </Grid>
               </TransactionsContextProvider>

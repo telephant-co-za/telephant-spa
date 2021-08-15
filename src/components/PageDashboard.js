@@ -15,7 +15,7 @@ const SubForm = (props) => {
   return <>{props.render()}</>;
 };
 
-export default function Dashboard(props) {
+export default function PageDashboard(props) {
   return (
     <Box p={3}>
       <Grid container spacing={3}>

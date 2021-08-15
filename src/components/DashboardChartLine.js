@@ -3,9 +3,7 @@ import { Line } from "react-chartjs-2";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
 import { LineChartPrep } from "../functions/LineChartPrep";
 
-/*************** TILL HERE ******** */
-
-export default function DashboardLineChart(props) {
+export default function DashboardChartLine(props) {
   // STATIC DATA UNTIL CAN SORT OUT THE CONTEXT
   // BREAKS THE TRANSACTIONS PAGE
 
