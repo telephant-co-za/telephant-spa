@@ -10,7 +10,7 @@ export default function Video() {
 
 <h2>Idemne potest esse dies saepius, qui semel fuit?</h2>
 
-<p><a href='http://loripsum.net/' target='_blank'>Tecum optime, deinde etiam cum mediocri amico.</a> Istam voluptatem, inquit, Epicurus ignorat? Nemo igitur esse beatus potest. Quibusnam praeteritis? Quid vero? <i>Hic ambiguo ludimur.</i> </p>
+<p><a href='http://loripsum.net/' target='_blank' rel="noopener noreferrer">Tecum optime, deinde etiam cum mediocri amico.</a> Istam voluptatem, inquit, Epicurus ignorat? Nemo igitur esse beatus potest. Quibusnam praeteritis? Quid vero? <i>Hic ambiguo ludimur.</i> </p>
 
 <blockquote cite='http://loripsum.net'>
 	Habebat tamen rationem valitudinis: utebatur iis exercitationibus, ut ad cenam et sitiens et esuriens veniret, eo cibo, qui et suavissimus esset et idem facillimus ad concoquendum, vino et ad voluptatem et ne noceret.

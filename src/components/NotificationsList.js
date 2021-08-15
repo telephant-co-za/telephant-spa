@@ -1,11 +1,9 @@
 import React from 'react';
 import axios from 'axios'
 import {useEffect, useState} from "react";
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Button from '@material-ui/core/Button';
 
 import InfoIcon from '@material-ui/icons/Info';
 import DefaultIcon from '@material-ui/icons/Help'

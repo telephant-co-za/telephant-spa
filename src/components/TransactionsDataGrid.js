@@ -17,8 +17,10 @@ import UseIcon from '@material-ui/icons/PhoneInTalk';
 import SendIcon from '@material-ui/icons/Send';
 import ReceiveIcon from '@material-ui/icons/CallReceived'
 import DefaultIcon from '@material-ui/icons/Help'  // Shouldn't show
-import WithdrawIcon from '@material-ui/icons/LocalAtm';
+import TopupIcon from '@material-ui/icons/LocalAtm';
 import TransactionsDetail from './TransactionsDetail'
+import TaxIcon from '@material-ui/icons/AccountBalance';
+import FeeIcon from '@material-ui/icons/AttachMoney';
 
 import { useContext } from "react";
 import { TransactionsContext } from "../contexts/TransactionsContext";
@@ -50,30 +52,34 @@ function Icon(value) {
   switch(value) {
     case 'DEPOSIT': 
       return <><BuyIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Buy</Typography></>
-    case 'AIRTIME': 
+      case 'TAX': 
+      return <><TaxIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Tax</Typography></>
+    case 'CONVERT': 
       return <><UseIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Use</Typography></>
     case 'SEND': 
         return <><SendIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Send</Typography></>
     case 'RECEIVE': 
       return <><ReceiveIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Receive</Typography></>
-    case 'Withdraw': 
-      return <><WithdrawIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Withdraw</Typography></>
-    default: 
+    case 'FEE': 
+      return <><FeeIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Fee</Typography></>
+    case 'TOPUP': 
+      return <><TopupIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Top Up</Typography></>
+      default: 
       return <><DefaultIcon /><Typography style={{marginLeft: '3px'}} variant='subtitle2'>Unknown</Typography></>
   }
 };
 
-/* 'AIRTIME',
-'RECEIVE',
-'DEPOSIT', 
-'SEND',   
+/* PUBLIC TYPE TRANSACTIONS
+// OTHERS ARE INTERNAL AND HIDDEN
+// AS IN INTERNAL CONTRA TRANSACTION
 
-'INITIAL', 
-'PAY', 
+'RECEIVE', --
+'SEND',  -- 
 'TOPUP', 
 'FEE', 
 'TAX', 
-'CONVERT', */
+'CONVERT',
+*/
 
 
 const zarPrice = {

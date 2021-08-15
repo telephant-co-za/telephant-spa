@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";

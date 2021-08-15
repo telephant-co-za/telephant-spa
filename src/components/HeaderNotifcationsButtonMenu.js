@@ -3,16 +3,9 @@ import { Menu, MenuItem, IconButton, List, ListItem, Button, Grid } from '@mater
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import Badge from '@material-ui/core/Badge';
 import {useEffect, useState} from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios'
 import NotificationsList from './NotificationsList'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: 'white'
-  },
-});
 
 export default function HeaderNotificationsButtonMenu() {
 

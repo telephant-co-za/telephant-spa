@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Box, Card, CardContent, CardHeader, List, ListItem, CardActions } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
@@ -12,14 +11,6 @@ import SendIcon from '@material-ui/icons/Send';
 import { useContext } from "react";
 import { ContactsContext } from "../contexts/ContactsContext";
 import Draggable from 'react-draggable';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
 
 function makeName(firstName, lastName)
 {
