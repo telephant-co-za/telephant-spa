@@ -1,36 +1,26 @@
 import React from 'react';
 import { CardHeader, CardContent, Card, Box, InputLabel, FormLabel, CardActions, Button, InputAdornment, Input } from '@material-ui/core';
-import { useContext } from "react";
-import { BalanceContext } from "../contexts/BalanceContext";
+import ContactsDropDown from '../components/DropDownContacts'
 
-function formatZAR(value){
-  const currencyFormatter = new Intl.NumberFormat('en-ZA', {
-      style: 'currency',
-      currency: 'ZAR',
-    });
-  
-    return currencyFormatter.format(Number(value))
-  }
+export default function DashboardFormRequestAirtime() {
 
-export default function FormRequestAirtime() {
-
-  const context = useContext(BalanceContext);
-  const { balance } = context;
 
   return (
     <Card style={{height: '100%'}}>
-    <CardHeader title="Use Airtime" />
+    <CardHeader title="Request Airtime" />
     <CardContent>
       <form noValidate>
         <Box mb={3}>
           <FormLabel>
-          You have {formatZAR(balance)} airtime available.  Please enter the amount you wish to use in the Amount field below.
+            You can request an airtime transfer from one of your contacts from this page.
           </FormLabel>
         </Box>
         <Box mb={3}>
           <InputLabel htmlFor="standard-adornment-amount">How much?</InputLabel>
           <Input
             id="standard-adornment-amount"
+            //value={values.amount}
+            //onChange={handleChange("amount")}
             startAdornment={
               <InputAdornment position="start" margin="dense">
                 R
@@ -38,10 +28,15 @@ export default function FormRequestAirtime() {
             }
           />
         </Box>
+        <Box mb={3}>
+          <InputLabel htmlFor="standard-adornment-amount">From who?</InputLabel>
+            <br />
+          <ContactsDropDown />
+        </Box>
         <Box mt={3}>
           <CardActions style={{ justifyContent: 'center' }}>
             <Button variant="contained" color="primary">
-              Use Airtime Now
+              Request Airtime Now
             </Button>
           </CardActions>
         </Box>

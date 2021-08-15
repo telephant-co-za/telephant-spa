@@ -2,11 +2,11 @@
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 
-import TransactionsActionCard from '../components/TransactionsActionCard'
-import TransactionsDataGrid from '../components/TransactionsDataGrid'
-import TransactionsViewPDF from '../components/TransactionsViewPDF'
-import TransactionsDetail from '../components/TransactionDetail'
-import TransactionsViewDetailPDF from '../components/TransactionsViewDetailPDF'
+import TransactionsActionCard     from '../components/TransactionsActionCard'
+import TransactionsDataGrid       from '../components/TransactionsDataGrid'
+import TransactionsViewPDF        from './TransactionsPDFView'
+import TransactionsDetail         from '../components/TransactionDetail'
+import TransactionsViewDetailPDF  from '../components/TransactionsPDFViewDetail'
 
 const SubView = (props) => {
   return (

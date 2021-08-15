@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardHeader, CardContent, CardActions, Fab } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 
-import MailIcon from '@material-ui/icons/MailOutline';
+import HTMLIcon from '@material-ui/icons/Code';
 import PdfIcon from '@material-ui/icons/PictureAsPdf';
 import DownloadIcon from '@material-ui/icons/GetApp';
 
@@ -29,9 +29,9 @@ export default function TransactionsActionCard(props) {
             <CardHeader title="Export Options"  align="center" />
             <CardContent>
                 <CardActions style={{ justifyContent: 'center' }}>
-                    <Fab variant="extended" color="primary" style={{ width: '200px' }}>
-                        <MailIcon />
-                        Send PDF
+                    <Fab variant="extended" color="primary" style={{ width: '200px' }} component={Link} to="/transactions/html">
+                        <HTMLIcon />
+                        View HTML
                     </Fab>
                 </CardActions >
                 <CardActions style={{ justifyContent: 'center' }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardHeader, CardContent, Card, Box, FormLabel } from '@material-ui/core';
 
-export default function FormRequestAirtime() {
+export default function DashboardFormRequestAirtime() {
 
 
   return (

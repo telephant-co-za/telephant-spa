@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardHeader, CardContent, Card, Box, InputLabel, FormLabel, CardActions, Button, InputAdornment, Input } from '@material-ui/core';
-import ContactsDropDown from '../components/ContactsDropDown'
+import ContactsDropDown from '../components/DropDownContacts'
 import { useContext } from "react";
 import { BalanceContext } from "../contexts/BalanceContext";
 
@@ -13,7 +13,7 @@ function formatZAR(value){
     return currencyFormatter.format(Number(value))
   }
 
-export default function FormRequestAirtime() {
+export default function DashboardFormRequestAirtime() {
 
   const context = useContext(BalanceContext);
   const { balance } = context;

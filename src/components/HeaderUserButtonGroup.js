@@ -1,7 +1,7 @@
 import React, { useContext }  from 'react';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import HeaderHelpButtonMenu from './HeaderHelpButtonMenu';
-import HeaderUserButtonMenu from './HeaderUserButtonMenu';
+import HeaderUserButtonMenu from '../components/HeaderUserMenuButton';
 import HeaderNotifcationsButtonMenu from './HeaderNotifcationsButtonMenu';
 import {AuthContext} from '../contexts/AuthenticationContext'
 

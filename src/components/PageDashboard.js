@@ -1,14 +1,15 @@
 import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 
-import FormBuyAirtime from '../forms/FormBuyAirtime';
-import FormUseAirtime from '../forms/FormUseAirtime';
-import FormSendAirtime from '../forms/FormSendAirtime';
-import FormRequestAirtime from '../forms/FormRequestAirtime';
+import FormBuyAirtime from '../components/DashboardFormBuyAirtime';
+import FormUseAirtime from '../components/DashboardFormUseAirtime';
+import FormSendAirtime from '../components/DashboardFormSendAirtime';
+import FormRequestAirtime from '../components/DashboardFormRequestAirtime';
+
 import DashboardAccountBalance from '../components/DashboardAccountBalance';
 import DashboardActionCard from '../components/DashboardActionCard';
-import DashboardBarChart from '../components/DashboardLineChart';
-import DashboardLineChart from '../components/DashboardBarChart';
+import DashboardBarChart from '../components/DashboardChartLine';
+import DashboardLineChart from '../components/DashboardChartBar';
 
 const SubForm = (props) => {
   return (

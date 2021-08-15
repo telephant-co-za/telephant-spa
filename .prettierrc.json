@@ -1,0 +1,17 @@
+{}
+
+# Ignore artifacts:
+/.storybook
+/.vscode
+/node_modules
+/public
+.env
+.eslinignore
+.gitignore
+package-lock.json
+package.json
+README.md
+/assets
+/stories
+
+

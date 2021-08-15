@@ -10,7 +10,6 @@ import {
   Typography,
   Box
 } from "@material-ui/core";
-import { spacing } from '@material-ui/system';
 
 const transaction = {
   header: {
