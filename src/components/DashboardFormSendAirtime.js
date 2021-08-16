@@ -14,15 +14,7 @@ import {
 import ContactsDropDown from "./WidgetDropDownContact";
 import { useContext } from "react";
 import { BalanceContext } from "../contexts/BalanceContext";
-
-function formatZAR(value) {
-  const currencyFormatter = new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-  });
-
-  return currencyFormatter.format(Number(value));
-}
+import { formatZAR } from "../functions/Formatting.js";
 
 export default function DashboardFormSendAirtime() {
   const context = useContext(BalanceContext);
@@ -45,8 +37,6 @@ export default function DashboardFormSendAirtime() {
             </InputLabel>
             <Input
               id="standard-adornment-amount"
-              //value={values.amount}
-              //onChange={handleChange("amount")}
               startAdornment={
                 <InputAdornment position="start" margin="dense">
                   R

@@ -13,7 +13,6 @@ export default function DashboardActionCardButton({ icon, subform }) {
         variant="extended"
         color="primary"
         style={{ width: "200px" }}
-        href={link}
       >
         {icon}
         {text}

@@ -31,8 +31,6 @@ export default function DashboardFormRequestAirtime() {
             </InputLabel>
             <Input
               id="standard-adornment-amount"
-              //value={values.amount}
-              //onChange={handleChange("amount")}
               startAdornment={
                 <InputAdornment position="start" margin="dense">
                   R

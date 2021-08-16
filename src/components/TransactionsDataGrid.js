@@ -1,20 +1,9 @@
 import * as React from "react";
 import { DataGrid } from "@material-ui/data-grid";
-import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-
-// Note rename Icons to make easier to match to Actions
-import BuyIcon from "@material-ui/icons/CreditCard";
-import UseIcon from "@material-ui/icons/PhoneInTalk";
-import SendIcon from "@material-ui/icons/Send";
-import ReceiveIcon from "@material-ui/icons/CallReceived";
-import DefaultIcon from "@material-ui/icons/Help"; // Shouldn't show
-import TopupIcon from "@material-ui/icons/LocalAtm";
-import TaxIcon from "@material-ui/icons/AccountBalance";
-import FeeIcon from "@material-ui/icons/AttachMoney";
+import { TransactionIcons } from "../functions/Formatting";
 import { useHistory } from "react-router-dom";
-
 import { useContext } from "react";
 import { TransactionsContext } from "../contexts/TransactionsContext";
 
@@ -39,95 +28,6 @@ function parseISOString(s) {
   }
 }
 
-function Icon(value) {
-  switch (value) {
-    case "DEPOSIT":
-      return (
-        <>
-          <BuyIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Buy
-          </Typography>
-        </>
-      );
-    case "TAX":
-      return (
-        <>
-          <TaxIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Tax
-          </Typography>
-        </>
-      );
-    case "CONVERT":
-      return (
-        <>
-          <UseIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Use
-          </Typography>
-        </>
-      );
-    case "SEND":
-      return (
-        <>
-          <SendIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Send
-          </Typography>
-        </>
-      );
-    case "RECEIVE":
-      return (
-        <>
-          <ReceiveIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Receive
-          </Typography>
-        </>
-      );
-    case "FEE":
-      return (
-        <>
-          <FeeIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Fee
-          </Typography>
-        </>
-      );
-    case "TOPUP":
-      return (
-        <>
-          <TopupIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Top Up
-          </Typography>
-        </>
-      );
-    default:
-      return (
-        <>
-          <DefaultIcon />
-          <Typography style={{ marginLeft: "3px" }} variant="subtitle2">
-            Unknown
-          </Typography>
-        </>
-      );
-  }
-}
-
-/* PUBLIC TYPE TRANSACTIONS
-// OTHERS ARE INTERNAL AND HIDDEN
-// AS IN INTERNAL CONTRA TRANSACTION
-
-'RECEIVE', --
-'SEND',  -- 
-'TOPUP', 
-'FEE', 
-'TAX', 
-'CONVERT',
-*/
-
 const zarPrice = {
   type: "number",
   valueFormatter: ({ value }) => currencyFormatter.format(Number(value)),
@@ -143,7 +43,8 @@ const columns = [
   {
     field: "id",
     headerName: "Action",
-    renderCell: (params) => Icon(params.getValue(params.id, "type")),
+    renderCell: (params) =>
+      TransactionIcons(params.getValue(params.id, "type")),
     flex: 0.6,
   },
   { field: "accountID", hide: true },

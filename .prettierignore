@@ -1,5 +1,4 @@
 # Ignore artifacts:
-.storybook
 .vscode
 /node_modules
 /public

@@ -10,6 +10,7 @@ import {
   Typography,
   Box,
 } from "@material-ui/core";
+import { formatZAR, zarDateTime } from "../functions/Formatting";
 
 const transaction = {
   header: {
@@ -51,34 +52,7 @@ const rows = transaction.lines.map((item, index) => (
   </>
 ));
 
-function formatZAR(value) {
-  const currencyFormatter = new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-  });
-
-  return currencyFormatter.format(Number(value));
-}
-
-function zarDateTime(value) {
-  return datetimeFormatter.format(parseISOString(value));
-}
-
-const datetimeFormatter = new Intl.DateTimeFormat("en-GB", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
-
-function parseISOString(s) {
-  // Grid passing in undefined values and breaking so exclude undefined
-  if (typeof s != "undefined") {
-    var b = s.split(/\D+/);
-    return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
-  }
-}
-
-const TransactionDetail = (props) => {
+const TransactionsDetail = (props) => {
   return (
     <Box width={1 / 2}>
       <Card>
@@ -124,4 +98,4 @@ const TransactionDetail = (props) => {
   );
 };
 
-export default TransactionDetail;
+export default TransactionsDetail;

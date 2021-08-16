@@ -13,15 +13,7 @@ import {
 } from "@material-ui/core";
 import { useContext } from "react";
 import { BalanceContext } from "../contexts/BalanceContext";
-
-function formatZAR(value) {
-  const currencyFormatter = new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-  });
-
-  return currencyFormatter.format(Number(value));
-}
+import { formatZAR } from "../functions/Formatting";
 
 export default function DashboardFormUseAirtime() {
   const context = useContext(BalanceContext);

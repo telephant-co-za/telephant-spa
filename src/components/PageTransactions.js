@@ -4,8 +4,8 @@ import { Grid, Box } from "@material-ui/core";
 
 import TransactionsActionCard from "../components/TransactionsActionCard";
 import TransactionsDataGrid from "../components/TransactionsDataGrid";
-import TransactionsViewPDF from "./TransactionsPDFView";
-import TransactionsDetail from "../components/TransactionDetail";
+import TransactionsViewPDF from "../components/TransactionsPDFView";
+import TransactionsDetail from "../components/TransactionsDetail";
 import TransactionsViewDetailPDF from "../components/TransactionsPDFViewDetail";
 
 const SubView = (props) => {
