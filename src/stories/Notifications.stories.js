@@ -3,6 +3,9 @@ import { storiesOf } from "@storybook/react";
 
 import NotificationsList from "../components/NotificationsList";
 
-storiesOf("Notifications/NotifcationsList", module).add("default", () => {
-  return <NotificationsList />;
-});
+storiesOf("Notifications/Components/Notifcations List", module).add(
+  "NotificationsList (default)",
+  () => {
+    return <NotificationsList />;
+  }
+);

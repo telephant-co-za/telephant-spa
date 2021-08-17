@@ -8,24 +8,32 @@ import TransactionsPDF from "../components/TransactionsPDF";
 import TransactionsPDFView from "../components/TransactionsPDFView";
 import TransactionsPDFViewDetail from "../components/TransactionsPDFViewDetail";
 import { MemoryRouter } from "react-router";
+import TransactionsContextProvider from "../contexts/TransactionsContext";
 
-storiesOf("Transactions/ActionCard", module)
+storiesOf("Transactions/Components/Action Card", module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
-  .add("default", () => <TransactionsActionCard />);
+  .add("TransactionsActionCard (default)", () => <TransactionsActionCard />);
 
-// storiesOf("Transactions/DataGrid", module).add("default", () => {
-//   return <TransactionsDataGrid />;
-// });
+storiesOf("Transactions/Components/Data Grid", module)
+  .addDecorator((story) => (
+    <TransactionsContextProvider>{story()}</TransactionsContextProvider>
+  ))
+  .add("TransactionsContextProvider (default)", () => {
+    return <TransactionsDataGrid />;
+  });
 
-storiesOf("Transactions/Detail", module).add("default", () => {
-  return <TransactionsDetail />;
-});
+storiesOf("Transactions/Components/Detail View", module).add(
+  "TransactionsDetail (default)",
+  () => {
+    return <TransactionsDetail />;
+  }
+);
 
-storiesOf("Transactions/PDF/PDF", module).add("default", () => {
+/* storiesOf("Transactions/PDF/PDF", module).add("default", () => {
   return <TransactionsPDF />;
-});
+}); */
 storiesOf("Transactions/PDF/View", module).add("default", () => {
   return <TransactionsPDFView />;
 });

@@ -9,39 +9,57 @@ import HeaderNotificationsButtonMenu from "../components/HeaderNotifcationsButto
 import HeaderUserButtonGroup from "../components/HeaderUserButtonGroup";
 import HeaderUserMenuButton from "../components/HeaderUserMenuButton";
 import HeaderTabs from "../components/HeaderTabs";
+import AuthContextProvider from "../contexts/AuthenticationContext";
 
-storiesOf("Header/Layout/Menu/Help/ButtonMenu", module)
-.addDecorator((story) => (
+storiesOf("Layout/Header/Menu/Help Button", module)
+  .addDecorator((story) => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
-.add("default", () => <HeaderHelpButtonMenu />);
+  .add("default", () => <HeaderHelpButtonMenu />);
 
-// storiesOf("Header/Layout/Layout", module).add("default", () => {
-//   return <HeaderLayout />;
-// });
+storiesOf("Layout/Header/Layout", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    return <HeaderLayout />;
+  });
 
+storiesOf("Layout/Header/Logo", module).add("default", () => {
+  return <HeaderLogo />;
+});
 
- storiesOf("DONE/Header/Layout/Logo", module).add("default", () => {
-   return <HeaderLogo />;
- });
+storiesOf("Layout/Header/Menu/Notifcations Button", module).add(
+  "default",
+  () => {
+    return <HeaderNotificationsButtonMenu />;
+  }
+);
 
+storiesOf("Layout/Header/Menu/User Group", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    return <HeaderUserButtonGroup />;
+  });
 
-// // storiesOf("Header/Layout/Menu/Notifications/ButtonMenu", module).add(
-// //   "default",
-// //   () => {
-// //     return <HeaderNotificationsButtonMenu />;
-// //   }
-// // );
+storiesOf("Layout/Header/Menu/User Button", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    return <HeaderUserMenuButton />;
+  });
 
-
-// storiesOf("Header/Layout/Menu/User/Group", module).add("default", () => {
-//   return <HeaderUserButtonGroup />;
-// });
-
-
-// storiesOf("Header/Layout/Menu/User/Button", module).add("default", () => {
-//   return <HeaderUserMenuButton />;
-// });
-// // storiesOf("Header/Layout/Tabs", module).add("default", () => {
-// //   return <HeaderTabs />;
-// // });
+storiesOf("Layout/Header/Tabs", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    return <HeaderTabs />;
+  });

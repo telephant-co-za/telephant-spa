@@ -9,36 +9,75 @@ import PageProfile from "../components/PageProfile";
 import PageRegister from "../components/PageRegister";
 import PageSignin from "../components/PageSignIn";
 import PageTerms from "../components/PageTerms";
-import PageTransactions from "../components/PageTransactions";
+//import PageTransactions from "../components/PageTransactions";
 import PageVideo from "../components/PageVideo";
+import ContactsContextProvider from "../contexts/ContactsContext";
+import { MemoryRouter } from "react-router";
+//import TransactionsContextProvider from "../contexts/TransactionsContext";
+import AuthContextProvider from "../contexts/AuthenticationContext";
 
-storiesOf("DONE/Pages/Static and Public/About", module).add("About", () => {
+storiesOf("Static Pages/About", module).add("About", () => {
   return <PageAbout />;
 });
-// storiesOf("Pages/Views/Contacts", module).add("Contacts", () => {
-//   return <PageContacts />;
-// });
-storiesOf("Pages/Views/Dashboard", module).add("Dashboard", () => {
+
+storiesOf("Contacts/Page", module)
+  .addDecorator((story) => (
+    <ContactsContextProvider>{story()}</ContactsContextProvider>
+  ))
+  .add("PageContacts (default)", () => {
+    return <PageContacts />;
+  });
+
+storiesOf("Dashboard/Pages", module).add("default", () => {
   return <PageDashboard />;
 });
-storiesOf("DONE/Pages/Static and Public/404", module).add("404", () => {
+
+storiesOf("Static Pages/404", module).add("PageNotFound (default)", () => {
   return <PageNotFound />;
 });
-storiesOf("Pages/Authentication/Profile", module).add("Profile", () => {
-  return <PageProfile />;
-});
-storiesOf("Pages/Authentication/Register", module).add("Register", () => {
-  return <PageRegister />;
-});
-storiesOf("Pages/Authentication/Signin", module).add("Signin", () => {
-  return <PageSignin />;
-});
-storiesOf("DONE/Pages/Static and Public/Terms", module).add("Terms", () => {
+
+storiesOf("Authentication/Pages/Profile", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("PageProfile (default)", () => {
+    return <PageProfile />;
+  });
+
+storiesOf("Authentication/Pages/Register", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("PageRegister (default)", () => {
+    return <PageRegister />;
+  });
+
+storiesOf("Authentication/Pages/Signin", module)
+  .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("PageSignin (default)", () => {
+    return <PageSignin />;
+  });
+
+storiesOf("Static Pages/Terms", module).add("PageTerms (default)", () => {
   return <PageTerms />;
 });
-// storiesOf("Pages/Views/Transactions", module).add("Transactions", () => {
-//   return <PageTransactions />;
-// });
-storiesOf("DONE/Pages/Static and Public/Video", module).add("Video", () => {
+
+/* storiesOf("Transactions/Pages", module)
+  .addDecorator((story) => (
+    <TransactionsContextProvider>{story()}</TransactionsContextProvider>
+  ))
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("PageTransactions (default)", () => {
+    return <PageTransactions />;
+  }); */
+
+storiesOf("Static Pages/Video", module).add("PageVideo (default)", () => {
   return <PageVideo />;
 });

@@ -38,7 +38,7 @@ const PageContacts = (props) => {
   const { contacts } = context;
 
   return (
-    <Box p={2}>
+    <Box p={2} m={2}>
       <Grid container spacing={3}>
         {contacts.map((contact, key) => {
           return (
