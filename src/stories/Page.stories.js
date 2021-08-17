@@ -54,14 +54,14 @@ storiesOf("Authentication/Pages/Register", module)
     return <PageRegister />;
   });
 
-storiesOf("Authentication/Pages/Signin", module)
+/* storiesOf("Authentication/Pages/Signin", module)
   .addDecorator((story) => <AuthContextProvider>{story()}</AuthContextProvider>)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("PageSignin (default)", () => {
     return <PageSignin />;
-  });
+  }); */
 
 storiesOf("Static Pages/Terms", module).add("PageTerms (default)", () => {
   return <PageTerms />;
