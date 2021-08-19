@@ -8,8 +8,8 @@ import FormRequestAirtime from "../components/DashboardFormRequestAirtime";
 
 import DashboardAccountBalance from "../components/DashboardAccountBalance";
 import DashboardActionCard from "../components/DashboardActionCard";
-import DashboardBarChart from "../components/DashboardChartLine";
-import DashboardLineChart from "../components/DashboardChartBar";
+import DashboardChartBar from "../components/DashboardChartBar";
+import DashboardChartLine from "../components/DashboardChartLine";
 
 const SubForm = (props) => {
   return <>{props.render()}</>;
@@ -20,10 +20,10 @@ export default function PageDashboard(props) {
     <Box p={3}>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <DashboardBarChart />
+          <DashboardChartBar />
         </Grid>
         <Grid item xs={6}>
-          <DashboardLineChart />
+          <DashboardChartLine/>
         </Grid>
       </Grid>
       <Grid container spacing={3}>

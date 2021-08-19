@@ -1,71 +1,58 @@
-// This function prepares the transactions for the line chart
-// It is not an elegant script and needs attetion
-// But it works
+// Fixed up these functions they were breaking the transactions context
 
-export function LineChartPrep(data) {
-  var data2 = [];
+function determineDates(a) {
+  let dates = [];
+  a.forEach((element, index) => {
+    if (!dates.includes(element.dateTime)) dates[index] = element.dateTime;
+  });
+  var g = dates.filter(function (el) {return el != null;});
+  return g;
+}
 
-  // Cleans the initial data of gumph
-  data.forEach(cleanItem);
+export function determineLineChartValues(a) {
+    const dates = determineDates(a);
+    let c = [];
+  
+    // groups and sums by date  
+    dates.forEach((date, index) => {
+      let sum = 0;
+      a.forEach((b) => {
+        if (b.dateTime === date) {
+          sum = sum + b.amount;
+        }
+        c[index] = { x: date, y: sum };
+      });
+    });
 
-  // Creates a list of dates that are in the data
-  var dates = [...new Set(data2.map((row) => row.date))];
+    let bal = 0;
 
-  // Turns the data into an array of key values (dates and amounts)
-  var result = [];
-  result = data2.reduce(function (res, value) {
-    if (!res[value.date]) {
-      res[value.date] = { x: value.date, y: 0 };
-      result.push(res[value.date]);
-    }
+    // generates a running balance
+    c.forEach((d, index) => {
+          bal = bal + d.y; 
+          c[index].y = bal;
+      });
 
-    res[value.date].y += value.amount;
+    // cleans up the dates
+    c.forEach((m, index) => {
+      var date = new Date(m.x);
 
-    return res;
-  }, {});
+        // dates components
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+  
+      // leading zeros
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+      
+      let u = year + "-" + month + "-" + day;
 
-  // This cleans up the array generated
-  var final = [];
-  dates.forEach(printDate);
-
-  // Finally get the final result into a clean format, sum the amounts and round off
-  for (let k = 0; k < final.length; k++) {
-    if (k !== 0) {
-      final[k].y = parseFloat((final[k - 1].y + final[k].y).toFixed(2));
-    }
-  }
-
-  return final;
-
-  // Little functions that helped
-  function printDate(date) {
-    final.push(result[date]);
-  }
-
-  function cleanItem(data) {
-    // delete the extra fields
-    delete data.id;
-    delete data.transactionID;
-    delete data.accountID;
-    delete data.description;
-    delete data.type;
-
-    var date = new Date(data.dateTime);
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var dt = date.getDate();
-
-    if (dt < 10) {
-      dt = "0" + dt;
-    }
-    if (month < 10) {
-      month = "0" + month;
-    }
-
-    data.date = year + "-" + month + "-" + dt;
-
-    delete data.dateTime;
-
-    data2.push(data);
-  }
+      // replace date
+      c[index].x = u
+  });
+    return c;
 }

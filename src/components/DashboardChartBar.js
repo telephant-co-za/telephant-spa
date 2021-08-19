@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Bar } from "react-chartjs-2";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
-import { BarChartPrep, Labels } from "../functions/BarChartPrep";
+import {
+  determineBarChartValues,
+  determineTypes,
+} from "../functions/BarChartPrep";
+import { TransactionsContext } from "../contexts/TransactionsContext";
 
 export default function DashboardChartBar(props) {
-  const values = BarChartPrep();
-  const labels = Labels();
+  const context = useContext(TransactionsContext);
+  const { transactions } = context;
+
+  let values = determineBarChartValues(transactions);
+  let labels = determineTypes(transactions);
 
   const config = {
     labels: labels,
