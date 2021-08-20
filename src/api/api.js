@@ -11,9 +11,15 @@ export const getBalance = () => {
 };
 
 export const getTransactions = () => {
-  return fetch(`http://www.telephant.co.za/transactions.json`).then((res) =>
-    res.json()
-  );
+  return fetch(`/v1/transactions`, {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4",
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
 };
 
 export const login = async (username, password) => {
@@ -36,4 +42,52 @@ export const signup = async (username, password) => {
     body: JSON.stringify({ telephoneNumber: username, password: password }),
   });
   return res.json();
+};
+
+export const apiMarkAllNotificationsRead = () => {
+  return fetch(`/v1/notifications`, {
+    method: "POST",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4",
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
+};
+
+export const apiMarkOneNotificationRead = (id) => {
+  return fetch(`/v1/notifications//` + id, {
+    method: "POST",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4",
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
+};
+
+export const getNotifications = () => {
+  return fetch(`/v1/notifications`, {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4",
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
+};
+
+export const apiGetNotificationsCount = () => {
+  return fetch(`/v1/notifications/count`, {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.Mjc4Mjk1MjQwMzE.udr2pqWiHyVwfp3MwjbgpHSH7ZZzERRGqgzeDHqSVx4",
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
 };

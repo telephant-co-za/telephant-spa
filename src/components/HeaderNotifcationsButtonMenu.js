@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Menu,
   MenuItem,
@@ -11,11 +11,24 @@ import {
 import NotificationsNoneOutlinedIcon from "@material-ui/icons/NotificationsNoneOutlined";
 import Badge from "@material-ui/core/Badge";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import NotificationsList from "./NotificationsList";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { NotificationsContext } from "../contexts/NotificationsContext";
+import { makeStyles } from "@material-ui/core/styles";
+import { apiGetNotificationsCount } from '../api/api'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "&:hover": {
+      backgroundColor: "white",
+    },
+  },
+}));
 
 export default function HeaderNotificationsButtonMenu() {
+  const classes = useStyles();
+  const context = useContext(NotificationsContext);
+  const { markAllNotificationsRead } = context;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -27,15 +40,21 @@ export default function HeaderNotificationsButtonMenu() {
   };
 
   const markAllRead = () => {
-    console.log("Mark all as read!!!");
+    setCount(0);
+    markAllNotificationsRead();
+  };
+
+  const markOneAsRead = () => {
+    setCount(count - 1);
   };
 
   const [count, setCount] = useState([]);
 
   useEffect(() => {
-    axios.get("http://www.telephant.co.za/count.json").then((response) => {
-      setCount(response.data.unread);
+    apiGetNotificationsCount().then((response) => {
+      setCount(response.unread);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -56,14 +75,14 @@ export default function HeaderNotificationsButtonMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem>
+        <MenuItem className={classes.root}>
           <List>
             <ListItem>
               <Grid container style={{ justifyContent: "right" }} width="100%">
                 <HighlightOffIcon onClick={handleClose} edge="end" />
               </Grid>
             </ListItem>
-            <NotificationsList />
+            <NotificationsList markOneAsRead={markOneAsRead} />
             <ListItem>
               <Button variant="contained" onClick={markAllRead} color="primary">
                 Read All

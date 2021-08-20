@@ -23,7 +23,7 @@ export default function PageDashboard(props) {
           <DashboardChartBar />
         </Grid>
         <Grid item xs={6}>
-          <DashboardChartLine/>
+          <DashboardChartLine />
         </Grid>
       </Grid>
       <Grid container spacing={3}>
