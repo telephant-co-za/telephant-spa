@@ -9,14 +9,14 @@ import {
   CardActions,
   Button,
   InputAdornment,
-  Input
+  Input,
 } from "@material-ui/core";
 import { useContext } from "react";
 import { BalanceContext } from "../contexts/BalanceContext";
 import { formatZAR } from "../functions/Formatting";
 import { useForm, Controller } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert from "@material-ui/lab/Alert";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -50,8 +50,8 @@ export default function DashboardFormUseAirtime() {
             </InputLabel>
             <Controller
               name="amount"
-              rules={{ 
-                required: "The amount is required."
+              rules={{
+                required: "The amount is required.",
               }}
               control={control}
               defaultValue=""
@@ -69,7 +69,11 @@ export default function DashboardFormUseAirtime() {
             <ErrorMessage
               errors={errors}
               name="amount"
-              render={({ message }) => <Box mt={1}><Alert severity="warning">{message}</Alert></Box>}
+              render={({ message }) => (
+                <Box mt={1}>
+                  <Alert severity="warning">{message}</Alert>
+                </Box>
+              )}
             />
           </Box>
           <Box mt={3}>
