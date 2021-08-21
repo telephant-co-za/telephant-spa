@@ -2,9 +2,9 @@ import React from "react";
 import { Fab, CardActions } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-export default function DashboardActionCardButton({ icon, subform }) {
-  const text = `${subform} Airtime`;
-  const link = `airtime/${subform}`;
+export default function DashboardActionCardButton({ icon, action }) {
+  const text = `${action} Airtime`;
+  const link = `/airtime/${action}`;
   return (
     <CardActions style={{ justifyContent: "center" }}>
       <Fab

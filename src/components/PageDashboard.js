@@ -42,6 +42,8 @@ export default function PageDashboard(props) {
                 return <SubForm render={() => <FormSendAirtime />} />;
               case "buy":
                 return <SubForm render={() => <FormBuyAirtime />} />;
+              case "use":
+                return <SubForm render={() => <FormUseAirtime />} />;
               default:
                 return <SubForm render={() => <FormUseAirtime />} />;
             }

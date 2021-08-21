@@ -89,8 +89,8 @@ const App = () => {
                           <Dashboard subform="buy" />
                         </PrivateRoute>
 
-                        <PrivateRoute exact path="/airtime">
-                          <Dashboard subform="use" />
+                        <PrivateRoute path="/airtime">
+                          <Dashboard />
                         </PrivateRoute>
 
                         {/* public */}

@@ -15,7 +15,7 @@ import NotificationsList from "./NotificationsList";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import { NotificationsContext } from "../contexts/NotificationsContext";
 import { makeStyles } from "@material-ui/core/styles";
-import { apiGetNotificationsCount } from '../api/api'
+import { apiGetNotificationsCount } from "../api/api";
 
 const useStyles = makeStyles((theme) => ({
   root: {

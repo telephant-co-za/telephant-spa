@@ -13,12 +13,12 @@ export default function DashboardActionCard() {
     <Card style={{ height: "100%" }}>
       <CardHeader title="What would you like to do today?" />
       <Box mb={5}>
-        <DashboardActionCardButton icon={<CreditCardIcon />} subform="buy" />
-        <DashboardActionCardButton icon={<PhoneInTalkIcon />} subform="use" />
-        <DashboardActionCardButton icon={<SendIcon />} subform="send" />
+        <DashboardActionCardButton icon={<CreditCardIcon />} action="buy" />
+        <DashboardActionCardButton icon={<PhoneInTalkIcon />} action="use" />
+        <DashboardActionCardButton icon={<SendIcon />} action="send" />
         <DashboardActionCardButton
           icon={<CallReceivedIcon />}
-          subform="request"
+          action="request"
         />
       </Box>
     </Card>
