@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Grid, Box } from "@material-ui/core";
 import { useContext } from "react";
 import { ContactsContext } from "../contexts/ContactsContext";

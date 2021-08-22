@@ -21,6 +21,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import SaveIcon from "@material-ui/icons/Save";
 import Draggable from "react-draggable";
 import { makeStyles } from "@material-ui/core/styles";
+import { useConfirm } from "material-ui-confirm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,21 +53,35 @@ function makeName(firstName, lastName) {
 }
 
 const ContactCard = (props) => {
+  const confirm = useConfirm();
   const classes = useStyles();
   const [editing, setEditing] = useState(false);
 
   const contact = props.contact;
-  const num = props.num+1;
+  const num = props.num + 1;
 
   // NOTE: I am not going to implement uploading pictures to the S3 bucket
   // These are static pictures pulled from an S3 bucket where www.telephant.co.za is hosted
   // Running out of time to implement this
-  
-  function linkToPic(key){
-      const link = 'http://www.telephant.co.za/faces/'+num+'.jpeg'
-      console.log(link)
-      return link
+
+  function linkToPic(key) {
+    const link = "http://www.telephant.co.za/faces/" + num + ".jpeg";
+    console.log(link);
+    return link;
   }
+
+  const handleDelete = () => {
+    confirm({
+      description:
+        "Please confirm that you want to delete your contact!",
+    })
+      .then(() => {
+        /* ... */
+      })
+      .catch(() => {
+        /* ... */
+      });
+  };
 
   return (
     <Draggable bounds="parent" key={num}>
@@ -99,7 +114,7 @@ const ContactCard = (props) => {
                 {contact.telephoneNumber || editing ? (
                   <ListItem>
                     <ListItemIcon>
-                      <PhoneIcon color="#f44336" />
+                      <PhoneIcon />
                     </ListItemIcon>
                     {editing ? (
                       <TextField
@@ -129,7 +144,11 @@ const ContactCard = (props) => {
                 )}
               </List>
               <CardActions>
-                <IconButton aria-label="delete" color="primary">
+                <IconButton
+                  aria-label="delete"
+                  color="primary"
+                  onClick={handleDelete}
+                >
                   <DeleteIcon />
                 </IconButton>
                 <IconButton
