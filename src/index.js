@@ -22,6 +22,7 @@ import About from "./components/PageAbout";
 import Video from "./components/PageVideo";
 import Terms from "./components/PageTerms";
 import Register from "./components/PageRegister";
+
 // Contexts
 import ContactsContextProvider from "./contexts/ContactsContext";
 import BalanceContextProvider from "./contexts/BalanceContext";

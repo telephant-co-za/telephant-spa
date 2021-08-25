@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   getNotifications,
   apiMarkAllNotificationsRead,
   apiMarkOneNotificationRead,
 } from "../api/api";
+import { AuthContext } from "./AuthenticationContext";
 
 export const NotificationsContext = React.createContext(null);
 
 const NotificationsContextProvider = (props) => {
   const [notifications, setNotifications] = useState([]);
+
+  const context = useContext(AuthContext);
+  const { isAuthenticated } = context;
 
   const markAllNotificationsRead = () => {
     apiMarkAllNotificationsRead();
@@ -31,7 +35,11 @@ const NotificationsContextProvider = (props) => {
       setNotifications(response.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isAuthenticated]);
+
+  const clearNotifications = () => {
+    setNotifications("");
+  };
 
   return (
     <NotificationsContext.Provider
@@ -39,6 +47,7 @@ const NotificationsContextProvider = (props) => {
         notifications: notifications,
         markAllNotificationsRead: markAllNotificationsRead,
         markOneNotification: markOneNotification,
+        clearNotifications: clearNotifications,
       }}
     >
       {props.children}

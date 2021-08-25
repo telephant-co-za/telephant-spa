@@ -12,6 +12,7 @@
     "@material-ui/styles": "^4.11.4",
     "@react-pdf/renderer": "^2.0.18",
     "axios": "^0.21.1",
+    "bson": "^4.5.1",
     "chart.js": "^3.5.0",
     "date-fns": "^2.23.0",
     "filefy": "^0.1.11",

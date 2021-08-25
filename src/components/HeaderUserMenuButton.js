@@ -4,11 +4,28 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import { AuthContext } from "../contexts/AuthenticationContext";
 import { Link } from "react-router-dom";
 
+import { BalanceContext } from "../contexts/BalanceContext";
+import { TransactionsContext } from "../contexts/TransactionsContext";
+import { ContactsContext } from "../contexts/ContactsContext";
+import { NotificationsContext } from "../contexts/NotificationsContext";
+
 export default function HeaderUserButtonMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const context = useContext(AuthContext);
   const { isAuthenticated, signout } = context;
+
+  const balanceContext = useContext(BalanceContext);
+  const { clearBalance } = balanceContext;
+
+  const contactsContext = useContext(ContactsContext);
+  const { clearContacts } = contactsContext;
+
+  const transactionsContext = useContext(TransactionsContext);
+  const { clearTransactions } = transactionsContext;
+
+  const notificationsContext = useContext(NotificationsContext);
+  const { clearNotifications } = notificationsContext;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -19,6 +36,10 @@ export default function HeaderUserButtonMenu() {
   };
 
   function clickSignOut() {
+    clearNotifications();
+    clearTransactions();
+    clearBalance();
+    clearContacts();
     signout();
     handleClose();
   }
