@@ -15,17 +15,22 @@ const BalanceContextProvider = (props) => {
   // PHEW!!
 
   const context = useContext(AuthContext);
-  const { isAuthenticated } = context;
+  const { isAuthenticated, refresh } = context;
 
   useEffect(() => {
     getBalance().then((response) => {
       setBalance(response.balance);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthenticated]);
+  }, [isAuthenticated, refresh]);
 
   function clearBalance() {
     setBalance({});
+  }
+
+  function updateBalance(minusMe) {
+    const newBalance = balance - minusMe;
+    setBalance(newBalance);
   }
 
   return (
@@ -33,6 +38,7 @@ const BalanceContextProvider = (props) => {
       value={{
         balance: balance,
         clearBalance: clearBalance,
+        updateBalance: updateBalance,
       }}
     >
       {props.children}

@@ -12,7 +12,7 @@ const NotificationsContextProvider = (props) => {
   const [notifications, setNotifications] = useState([]);
 
   const context = useContext(AuthContext);
-  const { isAuthenticated } = context;
+  const { isAuthenticated, refresh } = context;
 
   const markAllNotificationsRead = () => {
     apiMarkAllNotificationsRead();
@@ -35,7 +35,7 @@ const NotificationsContextProvider = (props) => {
       setNotifications(response.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthenticated]);
+  }, [isAuthenticated, refresh]);
 
   const clearNotifications = () => {
     setNotifications("");

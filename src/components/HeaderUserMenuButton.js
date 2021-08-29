@@ -3,7 +3,7 @@ import { Menu, MenuItem, IconButton, Button } from "@material-ui/core";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import { AuthContext } from "../contexts/AuthenticationContext";
 import { Link } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import { BalanceContext } from "../contexts/BalanceContext";
 import { TransactionsContext } from "../contexts/TransactionsContext";
 import { ContactsContext } from "../contexts/ContactsContext";
@@ -42,7 +42,13 @@ export default function HeaderUserButtonMenu() {
     clearContacts();
     signout();
     handleClose();
+    history.push("http://www.telephant.co.za/");
+
+    // don't know why the page after sign out is broken
+    // needs time to troubleshoot
   }
+
+  let history = useHistory();
 
   if (isAuthenticated) {
     // Logged in... show this menu

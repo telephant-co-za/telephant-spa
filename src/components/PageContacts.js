@@ -1,3 +1,7 @@
+// Won't put confirmation snackbars on this interface
+// because there are already confirmation messages
+// Leads to too much consuion for the user
+
 import React, { useState, useContext } from "react";
 import {
   Grid,
@@ -11,9 +15,7 @@ import {
   Avatar,
   IconButton,
   TextField,
-  Snackbar,
 } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -68,19 +70,6 @@ const PageContacts = (props) => {
   const classes = useStyles();
   const [card, setCard] = useState(0);
   const [add, setAdd] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   // NOTE: I am not going to implement uploading pictures to the S3 bucket
   // These are static pictures pulled from an S3 bucket where www.telephant.co.za is hosted

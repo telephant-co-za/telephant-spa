@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   CardHeader,
   CardContent,
@@ -6,8 +6,12 @@ import {
   Box,
   FormLabel,
 } from "@material-ui/core";
+import { AuthContext } from "../contexts/AuthenticationContext";
 
 export default function DashboardFormBuyAirtime() {
+  const context = useContext(AuthContext);
+  const { userName } = context;
+
   return (
     <Card style={{ height: "100%" }}>
       <CardHeader title="Buy Airtime" />
@@ -48,7 +52,7 @@ export default function DashboardFormBuyAirtime() {
               <td>
                 <b>Reference</b>
               </td>
-              <td>HJCY3HFM4K</td>
+              <td>{userName}</td>
             </tr>
           </table>
         </Box>

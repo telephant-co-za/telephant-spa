@@ -27,7 +27,7 @@ const ContactsContextProvider = (props) => {
     const newContacts = contacts.filter((contact) => contact._id !== id);
     setContacts(newContacts);
 
-    //apiDeleteContact(id)
+    apiDeleteContact(id);
   };
 
   const updateContact = (key, updateObject) => {

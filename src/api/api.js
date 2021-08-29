@@ -60,8 +60,6 @@ export const apiAddContact = (addObject) => {
 
   addBody = JSON.stringify(addBody);
 
-  console.log(addBody);
-
   return fetch(link, {
     method: "POST",
     headers: {
@@ -86,14 +84,73 @@ export const getBalance = () => {
   }).then((res) => res.json());
 };
 
+export const apiSendAirtime = (data) => {
+  const link = "/v1/airtime";
+
+  let sendBody = {
+    accountName: data.contact.value,
+    amount: data.amount,
+  };
+
+  sendBody = JSON.stringify(sendBody);
+
+  return fetch(link, {
+    method: "PUT",
+    headers: {
+      Authorization: window.localStorage.getItem("token"),
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: sendBody,
+  }).then((res) => res.json());
+};
+
+export const apiRequestAirtime = (data) => {
+  // This is a GET code because it would be possible to print QR Codes
+  // And use them as labels on products in a shop
+  // So for example a box of biscuits cost R10 the shop owner can preprint
+  // labels and place them on the box.  The trader can scan the QR code
+  // on checkout and create payment requests for the biscuits from the user
+  // This a solution to Point of Sale system for the small trader
+
+  const link = "/v1/airtime/" + data.contact.value + "/" + data.amount;
+
+  return fetch(link, {
+    method: "GET",
+    headers: {
+      Authorization: window.localStorage.getItem("token"),
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+};
+
 export const getTransactions = () => {
-  return fetch(`/v1/transactions`, {
+  return fetch(`/v1/transactions?limit=200`, {
     method: "GET",
     headers: {
       Authorization: window.localStorage.getItem("token"),
     },
     Accept: "application/json",
     "Content-Type": "application/json",
+  }).then((res) => res.json());
+};
+
+export const apiUseAirtime = (data) => {
+  let sendBody = {
+    amount: data.amount,
+  };
+
+  sendBody = JSON.stringify(sendBody);
+
+  return fetch(`/v1/airtime`, {
+    body: sendBody,
+    method: "POST",
+    headers: {
+      Authorization: window.localStorage.getItem("token"),
+      "Content-Type": "application/json",
+    },
+    Accept: "application/json",
   }).then((res) => res.json());
 };
 
@@ -104,9 +161,9 @@ export const apiMarkAllNotificationsRead = () => {
     method: "POST",
     headers: {
       Authorization: window.localStorage.getItem("token"),
+      "Content-Type": "application/json",
     },
     Accept: "application/json",
-    "Content-Type": "application/json",
   }).then((res) => res.json());
 };
 

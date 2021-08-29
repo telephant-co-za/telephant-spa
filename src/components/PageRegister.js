@@ -38,7 +38,7 @@ const SignUpPage = (props) => {
 
   const classes = useStyles();
 
-  const { from } = props.location.state || { from: { pathname: "/" } };
+  //const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (registered === true) {
     return <Redirect to="./login" />;

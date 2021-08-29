@@ -8,14 +8,14 @@ const TransactionsContextProvider = (props) => {
   const [transactions, setTransactions] = useState([]);
 
   const context = useContext(AuthContext);
-  const { isAuthenticated } = context;
+  const { isAuthenticated, refresh } = context;
 
   useEffect(() => {
     getTransactions().then((response) => {
       setTransactions(response.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthenticated]);
+  }, [isAuthenticated, refresh]);
 
   function clearTransactions() {
     setTransactions({});
