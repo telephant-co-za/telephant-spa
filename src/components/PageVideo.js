@@ -19,7 +19,7 @@ export default function PageVideo() {
           <Paper>
             <Box p={3}>
               <Iframe
-                url="http://www.youtube.com/embed/xDMP3i36naA"
+                url="http://www.telephant.co.za/video/ewd-video-med.mp4"
                 width="100%"
                 display="initial"
                 position="relative"
