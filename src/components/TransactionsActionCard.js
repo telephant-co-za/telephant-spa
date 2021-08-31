@@ -39,7 +39,7 @@ export default function TransactionsActionCard(props) {
             color="primary"
             style={{ width: "200px" }}
             component={Link}
-            to="/transactions/html"
+            to="/transactions"
           >
             <HTMLIcon />
             View HTML

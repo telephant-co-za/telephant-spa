@@ -136,6 +136,28 @@ export const getTransactions = () => {
   }).then((res) => res.json());
 };
 
+/* export const apiGetTransactionDetail = (id) => {
+  return fetch(`/v1/transactions/` + id, {
+    method: "GET",
+    headers: {
+      Authorization: window.localStorage.getItem("token"),
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((res) => res.json());
+}; */
+
+export const apiGetTransactionDetail = (tx) => {
+  return fetch("/v1/transactions/" + tx, {
+    method: "GET",
+    headers: {
+      Authorization: window.localStorage.getItem("token"),
+    },
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }).then((response) => response.json());
+};
+
 export const apiUseAirtime = (data) => {
   let sendBody = {
     amount: data.amount,

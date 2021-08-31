@@ -1,20 +1,7 @@
 import React from "react";
-import {
-  Grid,
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-} from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Iframe from "react-iframe";
-import img1 from "../img/1.jpeg";
-import img2 from "../img/2.jpeg";
-import img3 from "../img/3.jpeg";
-import img4 from "../img/4.jpeg";
-import img5 from "../img/5.jpeg";
-import img6 from "../img/6.jpeg";
 
 const useStyles = makeStyles({
   root: {

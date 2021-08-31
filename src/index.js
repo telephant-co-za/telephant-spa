@@ -54,15 +54,17 @@ const App = () => {
                             <Transactions subview="pdf" />
                           </PrivateRoute>
 
+                          {/* No time to implement
                           <PrivateRoute exact path="/transactions/:id/pdf">
                             <Transactions subview="pdf" />
                           </PrivateRoute>
+                          */}
 
                           <PrivateRoute exact path="/transactions">
                             <Transactions subview="datagrid" />
                           </PrivateRoute>
 
-                          <PrivateRoute exact path="/transactions/:id">
+                          <PrivateRoute exact path="/transactions/:tx">
                             <Transactions subview="detail" />
                           </PrivateRoute>
 
